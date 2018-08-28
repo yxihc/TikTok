@@ -16,7 +16,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void comment(View view) {
-        Toast.makeText(MainActivity.this, "啥答案所", Toast.LENGTH_SHORT).show();
         CommentBottomSheetDialogFragment commentBottomSheetDialogFragment = new CommentBottomSheetDialogFragment();
         commentBottomSheetDialogFragment.show(getSupportFragmentManager(), "");
     }

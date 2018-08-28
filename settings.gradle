@@ -1,1 +1,1 @@
-include ':app', ':interview'
+include ':app', ':interview', ':annotation_processing', ':annotation'
