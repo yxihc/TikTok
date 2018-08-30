@@ -1,5 +1,6 @@
 package com.taopao.interview;
 
+import android.app.AlertDialog;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.view.View;
@@ -16,6 +17,11 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        AlertDialog alertDialog = builder.create();
+
     }
 
     @OnClick({R.id.btn_basics, R.id.btn_jinjie})
@@ -29,9 +35,6 @@ public class MainActivity extends BaseActivity {
         }
     }
 
-    @Override
-    public void onSaveInstanceState(Bundle outState, PersistableBundle outPersistentState) {
-        super.onSaveInstanceState(outState, outPersistentState);
 
-    }
+
 }
