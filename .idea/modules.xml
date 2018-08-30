@@ -4,6 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/TikTok.iml" filepath="$PROJECT_DIR$/TikTok.iml" />
       <module fileurl="file://$PROJECT_DIR$/annotation/annotation.iml" filepath="$PROJECT_DIR$/annotation/annotation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/annotation/annotation.iml" filepath="$PROJECT_DIR$/annotation/annotation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/annotation_processing/annotation_processing.iml" filepath="$PROJECT_DIR$/annotation_processing/annotation_processing.iml" />
       <module fileurl="file://$PROJECT_DIR$/annotation_processing/annotation_processing.iml" filepath="$PROJECT_DIR$/annotation_processing/annotation_processing.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/interview/interview.iml" filepath="$PROJECT_DIR$/interview/interview.iml" />
