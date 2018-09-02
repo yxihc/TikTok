@@ -27,6 +27,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Android 进阶" />
+            <Button
+                android:id="@+id/btn_framework"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Android 开源框架" />
         </LinearLayout>
 
 

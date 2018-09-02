@@ -12,7 +12,6 @@ public class BaseActivity extends AppCompatActivity {
 
     public String TAG = this.getClass().getName();
 
-
     public void startActivity(Class clz) {
         startActivity(new Intent(this, clz));
     }

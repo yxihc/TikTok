@@ -11,7 +11,7 @@ import com.taopao.interview.R;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-
+//安卓基础知识学习
 public class BasicsActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
