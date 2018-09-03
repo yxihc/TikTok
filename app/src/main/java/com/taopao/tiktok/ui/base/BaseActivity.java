@@ -29,6 +29,8 @@ public class BaseActivity<P extends IPresenter> extends AppCompatActivity implem
         } else {
             //没有设置界面 不setContentView()
         }
+        initView(savedInstanceState);
+        initData();
     }
 
     @Override
@@ -64,5 +66,15 @@ public class BaseActivity<P extends IPresenter> extends AppCompatActivity implem
     @Override
     public int layoutResID() {
         return 0;
+    }
+
+    @Override
+    public void initView(@Nullable Bundle savedInstanceState) {
+
+    }
+
+    @Override
+    public void initData() {
+
     }
 }
