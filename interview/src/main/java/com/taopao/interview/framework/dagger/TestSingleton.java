@@ -23,9 +23,9 @@ public class TestSingleton {
         return "TestSingleton{}" + hashCode();
     }
 
-    @Singleton
-    @Component
-    public interface ActivityComponent {
-        void inject(DaggerActivity activity);
-    }
+//    @Singleton
+//    @Component
+//    public interface ActivityComponent {
+//        void inject(DaggerActivity activity);
+//    }
 }

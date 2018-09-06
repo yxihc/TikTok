@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.taopao.tiktok.ui.mvp.IPresenter;
 
+import javax.inject.Inject;
+
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
@@ -16,6 +18,7 @@ import butterknife.Unbinder;
  */
 public class BaseActivity<P extends IPresenter> extends AppCompatActivity implements IActivity {
     private Unbinder mUnbinder;
+    @Inject
     private P mPresenter;
 
     @Override
@@ -31,26 +34,6 @@ public class BaseActivity<P extends IPresenter> extends AppCompatActivity implem
         }
         initView(savedInstanceState);
         initData();
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
     }
 
     @Override

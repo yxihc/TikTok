@@ -30,7 +30,10 @@
             android:name=".basics.BasicsActivity"
             android:launchMode="singleTop" />
         <activity android:name=".framework.FrameworkActivity" />
-        <activity android:name=".framework.dagger.DaggerActivity"></activity>
+        <activity android:name=".framework.dagger.DaggerActivity" />
+        <activity android:name=".advanced.mvp.ui.activity.MainActivity" />
+        <activity android:name=".advanced.mvp.ui.activity.TestActivity" />
+        <activity android:name=".advanced.mvp.ui.activity.ACActivity"></activity>
     </application>
 
 </manifest>
