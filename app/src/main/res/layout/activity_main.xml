@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@android:color/black"
     android:orientation="vertical"
-    tools:context=".ui.MainActivity">
+    tools:context=".test.MainActivity">
 
     <Button
         android:layout_width="match_parent"

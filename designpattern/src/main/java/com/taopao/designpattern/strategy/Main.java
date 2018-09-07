@@ -7,8 +7,6 @@ package com.taopao.designpattern.strategy;
  */
 public class Main {
     public static void main(String[] strings) {
-
-
         Calc calc = new Calc();
         calc.setStrategy(new Add());
         double calc1 = calc.calc(10, 5);

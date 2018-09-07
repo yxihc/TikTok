@@ -1,9 +1,11 @@
 package com.taopao.tiktok.ui.base;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
+import com.taopao.tiktok.ui.dl.component.AppComponent;
 import com.taopao.tiktok.ui.mvp.IPresenter;
 
 import javax.inject.Inject;
@@ -16,10 +18,10 @@ import butterknife.Unbinder;
  * @Date: 2018/9/2 16:40
  * @Use： Activity基类
  */
-public class BaseActivity<P extends IPresenter> extends AppCompatActivity implements IActivity {
+public abstract class BaseActivity<P extends IPresenter> extends AppCompatActivity implements IActivity {
     private Unbinder mUnbinder;
-    @Inject
-    private P mPresenter;
+//    @Inject
+//    private P mPresenter;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -32,9 +34,10 @@ public class BaseActivity<P extends IPresenter> extends AppCompatActivity implem
         } else {
             //没有设置界面 不setContentView()
         }
-        initView(savedInstanceState);
-        initData();
+        initView();
+        initData(savedInstanceState);
     }
+
 
     @Override
     protected void onDestroy() {
@@ -46,18 +49,31 @@ public class BaseActivity<P extends IPresenter> extends AppCompatActivity implem
         }
     }
 
+    /**
+     * 界面布局
+     *
+     * @return
+     */
     @Override
     public int layoutResID() {
         return 0;
     }
 
+    /**
+     * view设置
+     */
     @Override
-    public void initView(@Nullable Bundle savedInstanceState) {
+    public void initView() {
 
     }
 
+    /**
+     * 数据设置
+     *
+     * @param savedInstanceState
+     */
     @Override
-    public void initData() {
+    public void initData(@Nullable Bundle savedInstanceState) {
 
     }
 }
