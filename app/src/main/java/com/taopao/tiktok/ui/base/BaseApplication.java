@@ -7,7 +7,7 @@ import android.support.annotation.NonNull;
 import com.taopao.tiktok.ui.base.delegate.application.AppDelegate;
 import com.taopao.tiktok.ui.base.delegate.application.AppLifecycles;
 import com.taopao.tiktok.ui.base.delegate.application.IApp;
-import com.taopao.tiktok.ui.dl.component.AppComponent;
+import com.taopao.tiktok.ui.di.component.AppComponent;
 import com.taopao.tiktok.utils.MvpUtils;
 import com.taopao.tiktok.utils.Preconditions;
 

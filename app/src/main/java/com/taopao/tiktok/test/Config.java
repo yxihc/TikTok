@@ -18,6 +18,7 @@ public class Config implements ConfigModule {
     @Override
     public void injectAppLifecycle(Context context, List<AppLifecycles> lifecycles) {
         lifecycles.add(new ApplicationTestImpl());
+        lifecycles.add(new ApplicationTestImpl2());
     }
 
     @Override

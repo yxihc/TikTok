@@ -1,6 +1,6 @@
-package com.taopao.tiktok.ui.dl.component;
+package com.taopao.tiktok.ui.di.component;
 
-import com.taopao.tiktok.ui.dl.module.AppModule;
+import com.taopao.tiktok.ui.di.module.AppModule;
 
 import dagger.Component;
 

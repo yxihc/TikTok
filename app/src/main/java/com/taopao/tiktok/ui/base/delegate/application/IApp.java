@@ -2,7 +2,7 @@ package com.taopao.tiktok.ui.base.delegate.application;
 
 import android.support.annotation.NonNull;
 
-import com.taopao.tiktok.ui.dl.component.AppComponent;
+import com.taopao.tiktok.ui.di.component.AppComponent;
 
 /**
  * @Author：淘跑

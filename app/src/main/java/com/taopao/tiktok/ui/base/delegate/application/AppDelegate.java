@@ -10,7 +10,7 @@ import android.content.res.Configuration;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 
-import com.taopao.tiktok.ui.dl.component.AppComponent;
+import com.taopao.tiktok.ui.di.component.AppComponent;
 import com.taopao.tiktok.ui.integration.ConfigModule;
 import com.taopao.tiktok.ui.integration.ManifestParser;
 
@@ -79,9 +79,9 @@ public class AppDelegate implements IApp, AppLifecycles {
             mApplication.registerActivityLifecycleCallbacks(lifecycle);
         }
 
-//        mComponentCallback = new AppComponentCallbacks(mApplication, mAppComponent);
+        mComponentCallback = new AppComponentCallbacks(mApplication, mAppComponent);
         //注册回掉: 内存紧张时释放部分内存
-//        mApplication.registerComponentCallbacks(mComponentCallback);
+        mApplication.registerComponentCallbacks(mComponentCallback);
 
         //执行框架外部, 开发者扩展的 App onCreate 逻辑
         for (AppLifecycles lifecycle : mAppLifecycles) {
@@ -92,6 +92,25 @@ public class AppDelegate implements IApp, AppLifecycles {
     @Override
     public void onTerminate(@NonNull Application application) {
 
+        if (mComponentCallback != null) {
+            mApplication.unregisterComponentCallbacks(mComponentCallback);
+        }
+        if (mActivityLifecycles != null && mActivityLifecycles.size() > 0) {
+            for (Application.ActivityLifecycleCallbacks lifecycle : mActivityLifecycles) {
+                mApplication.unregisterActivityLifecycleCallbacks(lifecycle);
+            }
+        }
+        if (mAppLifecycles != null && mAppLifecycles.size() > 0) {
+            for (AppLifecycles lifecycle : mAppLifecycles) {
+                lifecycle.onTerminate(mApplication);
+            }
+        }
+
+        this.mAppComponent = null;
+        this.mActivityLifecycles = null;
+        this.mComponentCallback = null;
+        this.mAppLifecycles = null;
+        this.mApplication = null;
     }
 
     /**

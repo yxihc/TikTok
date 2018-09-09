@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.taopao.tiktok.test;
+package com.taopao.delegateapp;
 
 import android.app.Activity;
 import android.app.Application;

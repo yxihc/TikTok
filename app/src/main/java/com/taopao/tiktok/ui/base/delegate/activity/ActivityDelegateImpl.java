@@ -1,4 +1,4 @@
-package com.taopao.tiktok.ui.base.delegate;
+package com.taopao.tiktok.ui.base.delegate.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -6,6 +6,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
 import com.taopao.tiktok.ui.base.IActivity;
+import com.taopao.tiktok.ui.base.delegate.activity.ActivityDelegate;
 import com.taopao.tiktok.utils.MvpUtils;
 
 /**
