@@ -33,7 +33,8 @@
         <activity android:name=".framework.dagger.DaggerActivity" />
         <activity android:name=".advanced.mvp.ui.activity.MainActivity" />
         <activity android:name=".advanced.mvp.ui.activity.TestActivity" />
-        <activity android:name=".advanced.mvp.ui.activity.ACActivity"></activity>
+        <activity android:name=".advanced.mvp.ui.activity.ACActivity" />
+        <activity android:name=".framework.RxJava2Activity"></activity>
     </application>
 
 </manifest>

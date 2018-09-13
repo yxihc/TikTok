@@ -9,6 +9,7 @@ import com.taopao.interview.framework.dagger.DaggerActivity;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+
 //开源框架学习
 public class FrameworkActivity extends BaseActivity {
 
@@ -26,6 +27,7 @@ public class FrameworkActivity extends BaseActivity {
                 startActivity(DaggerActivity.class);
                 break;
             case R.id.btn_rxjava:
+                startActivity(RxJava2Activity.class);
                 break;
         }
     }
