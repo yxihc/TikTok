@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.View;
 
 import com.taopao.tiktok.R;
+import com.taopao.tiktok.tests.ListActivity;
 import com.taopao.tiktok.ui.base.BaseActivity;
 import com.taopao.tiktok.ui.di.component.AppComponent;
 
@@ -16,7 +17,7 @@ public class MainActivity extends BaseActivity<MainPresenter> {
         Log.d("MainActivity", "comment: sadas ");
 //        CommentBottomSheetDialogFragment commentBottomSheetDialogFragment = new CommentBottomSheetDialogFragment();
 //        commentBottomSheetDialogFragment.show(getSupportFragmentManager(), "");
-        startActivity(new Intent(this, MainActivity.class));
+        startActivity(new Intent(this, ListActivity.class));
     }
 
     @Override

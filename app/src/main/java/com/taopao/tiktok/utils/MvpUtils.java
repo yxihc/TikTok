@@ -34,7 +34,6 @@ import java.security.MessageDigest;
 public class MvpUtils {
     static public Toast mToast;
 
-
     private MvpUtils() {
         throw new IllegalStateException("you can't instantiate me!");
     }

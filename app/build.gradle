@@ -62,12 +62,6 @@ dependencies {
         exclude module: 'retrofit'
         exclude module: 'okio'
     }
-    //缓存
-    implementation(rootProject.ext.dependencies["rxcache"]) {
-        exclude module: 'rxjava'
-        exclude module: 'dagger'
-        exclude module: 'api'
-    }
 
     //图片
     implementation rootProject.ext.dependencies["glide"]
@@ -79,6 +73,12 @@ dependencies {
     implementation(rootProject.ext.dependencies["butterknife"]) {
         exclude module: 'support-annotations'
         exclude module: 'support-compat'
+    }
+
+
+    //recyclerview的adapter
+    implementation (rootProject.ext.dependencies["BaseRecyclerViewAdapterHelper"]) {
+        exclude group: "com.android.support"
     }
 
     //dagger2

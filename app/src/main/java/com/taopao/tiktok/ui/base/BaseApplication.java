@@ -19,6 +19,12 @@ import com.taopao.tiktok.utils.Preconditions;
 public class BaseApplication extends Application implements IApp {
     private AppLifecycles mAppDelegate;
 
+    private static Context mContext;
+
+    public static Context getContext() {
+        return mContext;
+    }
+
     /**
      * 这里会在 {@link BaseApplication#onCreate} 之前被调用,可以做一些较早的初始化
      * 常用于 MultiDex 以及插件化框架的初始化
@@ -40,6 +46,7 @@ public class BaseApplication extends Application implements IApp {
         if (mAppDelegate != null) {
             mAppDelegate.onCreate(this);
         }
+        mContext = getApplicationContext();
     }
 
     /**

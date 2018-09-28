@@ -13,16 +13,34 @@ public class Main {
 
     public static void main(String[] strings) {
         ArrayList<String> strings1 = new ArrayList<>();
+//        System.out.println( strings1.hashCode());
 
 //        AppImpl app = new AppImpl();
 //        app.inject(strings1);
 
-        APP1 app1 = new APP1();
-        app1.inject(strings1);
+        App2 app2 = new App2();
+        app2.inject(strings1);
+ //       System.out.println(strings1);
 
-        for (String s : strings1) {
-            System.out.println(s);
-        }
+//        for (String s : strings1) {
+//            System.out.println(s);
+//        }
+
+
+
+        Integer x=0;
+
+
+
+
+        app2.Add(x);
+        System.out.println(x.hashCode());
+//        System.out.println(x);
+
+
+
+
+
         //输出666
     }
 

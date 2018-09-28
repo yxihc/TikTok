@@ -3,16 +3,10 @@ package com.taopao.tiktok.ui.base.delegate.activity;
 import android.app.Activity;
 import android.app.Application;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 
 import com.taopao.tiktok.ui.base.IActivity;
-import com.taopao.tiktok.ui.base.cache.Cache;
-import com.taopao.tiktok.ui.base.cache.IntelligentCache;
 import com.taopao.tiktok.ui.integration.AppManager;
-import com.taopao.tiktok.ui.integration.ConfigModule;
-import com.taopao.tiktok.utils.Preconditions;
 
 import java.util.List;
 
@@ -120,7 +114,6 @@ public class ActivityLifecycle implements Application.ActivityLifecycleCallbacks
         ActivityDelegate activityDelegate = fetchActivityDelegate(activity);
         if (activityDelegate != null) {
             activityDelegate.onDestroy();
-            getCacheFromActivity((IActivity) activity).clear();
         }
     }
 
@@ -157,18 +150,7 @@ public class ActivityLifecycle implements Application.ActivityLifecycleCallbacks
 
     private ActivityDelegate fetchActivityDelegate(Activity activity) {
         ActivityDelegate activityDelegate = null;
-        if (activity instanceof IActivity) {
-            Cache<String, Object> cache = getCacheFromActivity((IActivity) activity);
-            activityDelegate = (ActivityDelegate) cache.get(IntelligentCache.getKeyOfKeep(ActivityDelegate.ACTIVITY_DELEGATE));
-        }
         return activityDelegate;
-    }
-
-    @NonNull
-    private Cache<String, Object> getCacheFromActivity(IActivity activity) {
-        Cache<String, Object> cache = activity.provideCache();
-        Preconditions.checkNotNull(cache, "%s cannot be null on Activity", Cache.class.getName());
-        return cache;
     }
 
 }
