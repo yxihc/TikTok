@@ -9,15 +9,17 @@ import com.taopao.tiktok.R;
 import com.taopao.tiktok.tests.ListActivity;
 import com.taopao.tiktok.ui.base.BaseActivity;
 import com.taopao.tiktok.ui.di.component.AppComponent;
+import com.taopao.tiktok.ui.dialog.CommentBottomSheetDialogFragment;
 
 public class MainActivity extends BaseActivity<MainPresenter> {
 
 
     public void comment(View view) {
         Log.d("MainActivity", "comment: sadas ");
-//        CommentBottomSheetDialogFragment commentBottomSheetDialogFragment = new CommentBottomSheetDialogFragment();
-//        commentBottomSheetDialogFragment.show(getSupportFragmentManager(), "");
-        startActivity(new Intent(this, ListActivity.class));
+        CommentBottomSheetDialogFragment commentBottomSheetDialogFragment = new CommentBottomSheetDialogFragment();
+
+        commentBottomSheetDialogFragment.show(getSupportFragmentManager(), "");
+//        startActivity(new Intent(this, ListActivity.class));
     }
 
     @Override

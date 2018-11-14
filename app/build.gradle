@@ -75,9 +75,8 @@ dependencies {
         exclude module: 'support-compat'
     }
 
-
     //recyclerview的adapter
-    implementation (rootProject.ext.dependencies["BaseRecyclerViewAdapterHelper"]) {
+    implementation(rootProject.ext.dependencies["BaseRecyclerViewAdapterHelper"]) {
         exclude group: "com.android.support"
     }
 

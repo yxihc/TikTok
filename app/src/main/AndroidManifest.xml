@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.taopao.tiktok">
+
     <!-- 文件读取 -->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -8,11 +9,9 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-
 
     <application
         android:name=".ui.base.BaseApplication"
@@ -22,7 +21,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".test.MainActivity">
+        <activity
+            android:name=".test.MainActivity"
+            android:windowSoftInputMode="adjustPan|stateHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -34,7 +35,11 @@
             android:name="com.taopao.tiktok.test.Config"
             android:value="ConfigModule" />
 
-        <activity android:name=".tests.ListActivity"></activity>
+        <activity android:name=".tests.ListActivity" />
+        <!--android:theme="@android:style/Theme.Translucent"-->
+        <activity
+            android:name=".test.TransparentActivity"
+            android:theme="@style/Transparent"></activity>
     </application>
 
 </manifest>

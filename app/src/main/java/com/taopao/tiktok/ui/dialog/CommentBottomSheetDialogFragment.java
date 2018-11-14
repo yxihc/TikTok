@@ -1,6 +1,9 @@
 package com.taopao.tiktok.ui.dialog;
 
+import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.BottomSheetDialogFragment;
@@ -10,14 +13,18 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.view.WindowManager;
 import android.widget.TextView;
 
 import com.taopao.tiktok.R;
+import com.taopao.tiktok.test.InputDialog;
+import com.taopao.tiktok.test.TesttwoD;
+import com.taopao.tiktok.test.TransparentActivity;
 
 /**
  * @Author：淘跑
- * @Date: 2018/8/28 0028 17:04
+ * @Date: 2018/8/28  17:04
  * @Use：
  */
 public class CommentBottomSheetDialogFragment extends BottomSheetDialogFragment {
@@ -26,6 +33,7 @@ public class CommentBottomSheetDialogFragment extends BottomSheetDialogFragment 
         super.onCreate(savedInstanceState);
         //给dialog设置主题为透明背景 不然会有默认的白色背景
         setStyle(DialogFragment.STYLE_NO_FRAME, R.style.CustomBottomSheetDialogTheme);
+
     }
 
     @Nullable
@@ -39,11 +47,28 @@ public class CommentBottomSheetDialogFragment extends BottomSheetDialogFragment 
         return view;
     }
 
+    private void initView() {
+
+    }
+
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         final RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.rv);
+//        recyclerView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
+//                getScreenHeight(getActivity()) / 2));
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(new ItemAdapter(100));
+
+
+        view.findViewById(R.id.tv).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                InputDialog inputDialog = new InputDialog(getActivity());
+//                inputDialog.show();
+                startActivity(new Intent(getActivity(), TransparentActivity.class));
+            }
+        });
+        initView();
     }
 
     private class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.MyViewHolder> {
@@ -70,12 +95,27 @@ public class CommentBottomSheetDialogFragment extends BottomSheetDialogFragment 
 
         public class MyViewHolder extends RecyclerView.ViewHolder {
             final TextView text;
+
             MyViewHolder(LayoutInflater inflater, ViewGroup parent) {
                 super(inflater.inflate(R.layout.recycle_item_list_dialog, parent, false));
                 text = (TextView) itemView.findViewById(R.id.text);
             }
         }
 
+    }
+
+    /**
+     * 如果想要点击外部消失的话 重写此方法
+     *
+     * @param savedInstanceState
+     * @return
+     */
+    @Override
+    public Dialog onCreateDialog(Bundle savedInstanceState) {
+        Dialog dialog = super.onCreateDialog(savedInstanceState);
+        //设置点击外部可消失
+        dialog.setCanceledOnTouchOutside(true);
+        return dialog;
     }
 
     /**
