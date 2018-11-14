@@ -66,7 +66,7 @@ public class CommentBottomSheetDialogFragment extends BottomSheetDialogFragment 
 //                InputDialog inputDialog = new InputDialog(getActivity());
 //                inputDialog.show();
                 startActivity(new Intent(getActivity(), TransparentActivity.class));
-            }
+            } 
         });
         initView();
     }
