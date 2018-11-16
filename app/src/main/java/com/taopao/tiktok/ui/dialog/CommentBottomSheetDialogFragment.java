@@ -59,14 +59,15 @@ public class CommentBottomSheetDialogFragment extends BottomSheetDialogFragment 
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(new ItemAdapter(100));
 
-
         view.findViewById(R.id.tv).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                InputDialog inputDialog = new InputDialog(getActivity());
-//                inputDialog.show();
-                startActivity(new Intent(getActivity(), TransparentActivity.class));
-            } 
+                InputDialog inputDialog = new InputDialog(getActivity());
+                Window window = inputDialog.getWindow();
+                WindowManager.LayoutParams params = window.getAttributes();
+                window.setSoftInputMode(params.SOFT_INPUT_STATE_VISIBLE);
+                inputDialog.show();
+            }
         });
         initView();
     }
@@ -115,6 +116,10 @@ public class CommentBottomSheetDialogFragment extends BottomSheetDialogFragment 
         Dialog dialog = super.onCreateDialog(savedInstanceState);
         //设置点击外部可消失
         dialog.setCanceledOnTouchOutside(true);
+        //设置使软键盘弹出的时候dialog不会被顶起
+        Window win = dialog.getWindow();
+        WindowManager.LayoutParams params = win.getAttributes();
+        win.setSoftInputMode(params.SOFT_INPUT_ADJUST_NOTHING);
         return dialog;
     }
 

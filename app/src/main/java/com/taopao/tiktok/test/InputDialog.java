@@ -30,7 +30,6 @@ public class InputDialog extends Dialog {
         mContext = context;
         mRootView = LayoutInflater.from(context).inflate(R.layout.dialog_input, null);
         setContentView(mRootView);
-
         Window window = getWindow();
         WindowManager.LayoutParams params = window.getAttributes();
         params.width = WindowManager.LayoutParams.MATCH_PARENT;
