@@ -10,6 +10,7 @@ import com.taopao.tiktok.ui.base.delegate.application.IApp;
 import com.taopao.tiktok.ui.di.component.AppComponent;
 import com.taopao.tiktok.utils.MvpUtils;
 import com.taopao.tiktok.utils.Preconditions;
+import com.tencent.bugly.crashreport.CrashReport;
 
 /**
  * @Author：淘跑
@@ -47,6 +48,8 @@ public class BaseApplication extends Application implements IApp {
             mAppDelegate.onCreate(this);
         }
         mContext = getApplicationContext();
+
+        CrashReport.initCrashReport(getApplicationContext(), "c6dc9a5939", true);
     }
 
     /**

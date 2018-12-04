@@ -33,7 +33,6 @@ public class CommentBottomSheetDialogFragment extends BottomSheetDialogFragment 
         super.onCreate(savedInstanceState);
         //给dialog设置主题为透明背景 不然会有默认的白色背景
         setStyle(DialogFragment.STYLE_NO_FRAME, R.style.CustomBottomSheetDialogTheme);
-
     }
 
     @Nullable
