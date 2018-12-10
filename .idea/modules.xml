@@ -9,6 +9,7 @@
       <module fileurl="file://$PROJECT_DIR$/delegateapp/delegateapp.iml" filepath="$PROJECT_DIR$/delegateapp/delegateapp.iml" />
       <module fileurl="file://$PROJECT_DIR$/designpattern/designpattern.iml" filepath="$PROJECT_DIR$/designpattern/designpattern.iml" />
       <module fileurl="file://$PROJECT_DIR$/interview/interview.iml" filepath="$PROJECT_DIR$/interview/interview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/virtuallist/virtuallist.iml" filepath="$PROJECT_DIR$/virtuallist/virtuallist.iml" />
     </modules>
   </component>
 </project>
