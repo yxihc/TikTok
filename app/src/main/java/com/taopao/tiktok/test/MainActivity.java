@@ -15,11 +15,14 @@ public class MainActivity extends BaseActivity<MainPresenter> {
 
 
     public void comment(View view) {
+
+
         Log.d("MainActivity", "comment: sadas ");
         CommentBottomSheetDialogFragment commentBottomSheetDialogFragment = new CommentBottomSheetDialogFragment();
 
         commentBottomSheetDialogFragment.show(getSupportFragmentManager(), "");
 //        startActivity(new Intent(this, ListActivity.class));
+//        throw new UnsupportedOperationException("啦啦啦啦啦啦啦阿拉啦啦啦啦啦啦啦啦啦");
     }
 
     @Override
