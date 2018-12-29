@@ -8,7 +8,6 @@ import com.taopao.tiktok.ui.mvp.BasePresenter;
  * @Use：
  */
 public class MainPresenter extends BasePresenter<MainContacts.Model, MainContacts.View> {
-
     public MainPresenter(MainContacts.View view) {
         super(view);
     }

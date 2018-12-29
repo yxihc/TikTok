@@ -4,19 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white"
     android:orientation="vertical"
-    tools:context=".test.MainActivity">
+    tools:context=".HomeActivity">
 
-    <Button
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="comment"
-        android:text="评论列表" />
+        android:layout_height="match_parent"
+        android:layout_weight="1"></FrameLayout>
 
-    <Button
+
+    <com.taopao.tiktok.HomeMenuLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="loading"
-        android:text="Loading" />
+        android:layout_height="wrap_content"></com.taopao.tiktok.HomeMenuLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"></View>
 </LinearLayout>

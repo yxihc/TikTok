@@ -48,7 +48,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     class MyAdapter extends BaseQuickAdapter<String, BaseViewHolder> {
-
         public MyAdapter(@Nullable List<String> data) {
             super(R.layout.recycle_item_one, data);
         }
@@ -58,5 +57,4 @@ public class MainActivity extends AppCompatActivity {
 
         }
     }
-
 }

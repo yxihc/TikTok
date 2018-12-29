@@ -18,11 +18,11 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".test.MainActivity"
+            android:name=".HomeActivity"
             android:windowSoftInputMode="adjustPan|stateHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -36,10 +36,11 @@
             android:value="ConfigModule" />
 
         <activity android:name=".tests.ListActivity" />
-        <!--android:theme="@android:style/Theme.Translucent"-->
+        <!-- android:theme="@android:style/Theme.Translucent" -->
         <activity
             android:name=".test.TransparentActivity"
-            android:theme="@style/Transparent"></activity>
+            android:theme="@style/Transparent" />
+        <activity android:name=".test.MainActivity"></activity>
     </application>
 
 </manifest>
