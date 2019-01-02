@@ -5,15 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".HomeActivity">
+    tools:context=".CameraActivity">
 
-    <FrameLayout
+    <SurfaceView
+        android:id="@+id/surfaceview"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"></FrameLayout>
-
-    <com.taopao.tiktok.HomeMenuLayout
-        android:id="@+id/homemenu"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"></com.taopao.tiktok.HomeMenuLayout>
+        android:layout_height="match_parent" />
 </LinearLayout>

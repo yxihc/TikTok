@@ -1,15 +1,21 @@
 package com.taopao.tiktok;
 
 import android.content.Context;
+import android.os.Handler;
+import android.os.Message;
+import android.support.annotation.DrawableRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.OvershootInterpolator;
+import android.view.animation.RotateAnimation;
 import android.view.animation.ScaleAnimation;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -27,27 +33,32 @@ public class HomeMenuLayout extends FrameLayout {
     TextView mTvHome;
     @BindView(R.id.view_home)
     View mViewHome;
-    @BindView(R.id.ll_home)
-    LinearLayout mLlHome;
     @BindView(R.id.tv_gz)
     TextView mTvGz;
     @BindView(R.id.view_gz)
     View mViewGz;
-    @BindView(R.id.ll_gz)
-    LinearLayout mLlGz;
     @BindView(R.id.tv_message)
     TextView mTvMessage;
     @BindView(R.id.view_message)
     View mViewMessage;
-    @BindView(R.id.ll_message)
-    LinearLayout mLlMessage;
     @BindView(R.id.tv_me)
     TextView mTvMe;
     @BindView(R.id.view_me)
     View mViewMe;
-    @BindView(R.id.ll_me)
-    LinearLayout mLlMe;
+    @BindView(R.id.iv_home)
+    ImageView mIvHome;
+    @BindView(R.id.ll_home)
+    LinearLayout mLlHome;
+    @BindView(R.id.iv_gz)
+    ImageView mIvGz;
+    @BindView(R.id.ll_gz)
+    LinearLayout mLlGz;
     private Context mContext;
+    private ScaleAnimation mViewNoChecked;
+    private ScaleAnimation mTextChecked;
+    private ScaleAnimation mViewChecked;
+    private ScaleAnimation mNormalA;
+    private Animation mRotateAnimation;
 
     public HomeMenuLayout(@NonNull Context context) {
         super(context);
@@ -71,95 +82,223 @@ public class HomeMenuLayout extends FrameLayout {
         initView();
     }
 
-    private void initView() {
-
-        ScaleAnimation s = new ScaleAnimation(1, 1, 1, 0f,
-                Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 1);
-        s.setDuration(10);
-        s.setFillAfter(false);
-
-        mViewGz.startAnimation(s);
-        mViewMessage.startAnimation(s);
-        mViewMe.startAnimation(s);
+    /**
+     * 设置加载中的图片
+     *
+     * @param imgId
+     */
+    public void setLoadingImgRes(@DrawableRes int imgId) {
+        mIvHome.setImageResource(imgId);
+        mIvGz.setImageResource(imgId);
     }
 
-    int mCheckId = 0;
-    int mBeforeId = -1;
+    private void initView() {
+        if (mNormalA == null) {
+            mNormalA = new ScaleAnimation(1, 1, 1, 0f,
+                    Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 1);
+            mNormalA.setDuration(10);
+            mNormalA.setFillAfter(true);
+        }
+        mViewGz.startAnimation(mNormalA);
+        mViewMessage.startAnimation(mNormalA);
+        mViewMe.startAnimation(mNormalA);
+    }
 
-    @OnClick({R.id.ll_home, R.id.ll_gz, R.id.ll_message, R.id.ll_me})
+    int mCheckId = 0;//当前选中的
+    int mBeforeId = -1;//上一个选中的
+
+    @OnClick({R.id.fl_home, R.id.fl_gz, R.id.fl_message, R.id.fl_me})
     public void onViewClicked(View view) {
         switch (view.getId()) {
-            case R.id.ll_home:
+            case R.id.fl_home:
                 mBeforeId = mCheckId;
                 mCheckId = 0;
-                home(mTvHome, mViewHome);
+                checked(mTvHome, mViewHome);
                 break;
-            case R.id.ll_gz:
+            case R.id.fl_gz:
                 mBeforeId = mCheckId;
                 mCheckId = 1;
-                home(mTvGz, mViewGz);
+                checked(mTvGz, mViewGz);
                 break;
-            case R.id.ll_message:
+            case R.id.fl_message:
                 mBeforeId = mCheckId;
                 mCheckId = 2;
-                home(mTvMessage, mViewMessage);
+                checked(mTvMessage, mViewMessage);
                 break;
-            case R.id.ll_me:
+            case R.id.fl_me:
                 mBeforeId = mCheckId;
                 mCheckId = 3;
-                home(mTvMe, mViewMe);
+                checked(mTvMe, mViewMe);
                 break;
         }
     }
 
 
-    private void home(View tv, View view) {
-        ScaleAnimation scaleAnimation = new ScaleAnimation(1.0f, 1.05f, 1.0f, 1.05f,
-                Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
-        scaleAnimation.setInterpolator(new OvershootInterpolator(2));
-        scaleAnimation.setDuration(500);
-        scaleAnimation.setFillAfter(true);
-        tv.startAnimation(scaleAnimation);
+    private void checkAnim(TextView tv, View view) {
+        //设置字体颜色
+        mTvHome.setTextColor(mContext.getResources().getColor(mCheckId == 0 ? R.color.white : R.color.gray));
+        mTvGz.setTextColor(mContext.getResources().getColor(mCheckId == 1 ? R.color.white : R.color.gray));
+        mTvMessage.setTextColor(mContext.getResources().getColor(mCheckId == 2 ? R.color.white : R.color.gray));
+        mTvMe.setTextColor(mContext.getResources().getColor(mCheckId == 3 ? R.color.white : R.color.gray));
+        //文字动画
+        if (mTextChecked == null) {
+            mTextChecked = new ScaleAnimation(1.0f, 1.05f, 1.0f, 1.05f,
+                    Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
+            mTextChecked.setInterpolator(new OvershootInterpolator(2));
+            mTextChecked.setDuration(300);
+            mTextChecked.setFillAfter(false);
+        }
+        tv.startAnimation(mTextChecked);
+        //文字下面横动画
+        if (mViewChecked == null) {
+            mViewChecked = new ScaleAnimation(1, 1, 0, 1.0f,
+                    Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 1f);
+            mViewChecked.setDuration(300);
+            mViewChecked.setFillAfter(true);
+        }
+        view.startAnimation(mViewChecked);
+    }
 
+    private void checked(TextView tv, View view) {
+        if (mCheckId == 0 || mCheckId == 1) {
+            if (mCheckId == mBeforeId && isRunning) {
+                return;
+            }
+        } else {
+            if (mCheckId == mBeforeId) {
+                //下面就不要执行了
+                return;
+            }
+        }
+        checkAnim(tv, view);
 
-        ScaleAnimation s = new ScaleAnimation(1, 1, 0, 1.0f,
-                Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 1f);
-        s.setDuration(500);
-        s.setFillAfter(true);
-        view.startAnimation(s);
-
-
+        if (homeOrFellowLoading()) {
+            return;
+        }
+        if (mOnHomeMenuClickListener != null) {
+            mOnHomeMenuClickListener.onTabSelect(mCheckId);
+        }
+        //设置未点击状态
         if (mBeforeId != -1 && mBeforeId != mCheckId) {
             switch (mBeforeId) {
                 case 0:
-                    noCheck(mTvHome, mViewHome);
+                    noChecked(mViewHome);
                     break;
                 case 1:
-                    noCheck(mTvGz, mViewGz);
+                    noChecked(mViewGz);
                     break;
                 case 2:
-                    noCheck(mTvMessage, mViewMessage);
+                    noChecked(mViewMessage);
                     break;
                 case 3:
-                    noCheck(mTvMe, mViewMe);
+                    noChecked(mViewMe);
                     break;
             }
         }
     }
 
-    public void noCheck(View tv, View view) {
-        tv.animate().scaleX(1.05f)
-                .scaleY(1.05f)
-                .setDuration(500)
-                .setInterpolator(new OvershootInterpolator(2))
-                .start();
-
-        ScaleAnimation s = new ScaleAnimation(1, 1, 1, 0f,
-                Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 1);
-        s.setDuration(500);
-        s.setFillAfter(true);
-        view.startAnimation(s);
+    private boolean homeOrFellowLoading() {
+        if (mCheckId == 0 || mCheckId == 1) {
+            if (mCheckId == mBeforeId || mBeforeId == -1) {
+                if (mCheckId == 0) {
+                    setImageAnim(mLlHome, mIvHome);
+                } else if (mCheckId == 1) {
+                    setImageAnim(mLlGz, mIvGz);
+                }
+                if (mOnHomeMenuClickListener != null) {
+                    mOnHomeMenuClickListener.onTabReSelect(mCheckId);
+                }
+                return true;
+            }
+        }
+        return false;
     }
+
+    boolean isRunning = false;
+
+    private void setImageAnim(View linearlayout, View imgview) {
+        if (isRunning) {
+            return;
+        }
+        if (mRotateAnimation == null) {
+            mRotateAnimation = new RotateAnimation(0f, 360f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
+            mRotateAnimation.setFillAfter(false); // 设置保持动画最后的状态
+            mRotateAnimation.setDuration(600); // 设置动画时间
+            mRotateAnimation.setRepeatCount(-1);
+            mRotateAnimation.setInterpolator(new OvershootInterpolator()); // 设置插入器
+            mRotateAnimation.setAnimationListener(new Animation.AnimationListener() {
+                @Override
+                public void onAnimationStart(Animation animation) {
+                    Log.e("setAnimationListener", "onAnimationStart");
+                    isRunning = true;
+                }
+
+                @Override
+                public void onAnimationEnd(Animation animation) {
+                    isRunning = false;
+                }
+
+                @Override
+                public void onAnimationRepeat(Animation animation) {
+                    Log.e("setAnimationListener", "onAnimationRepeat");
+                }
+            });
+        }
+        linearlayout.setVisibility(INVISIBLE);
+        imgview.setVisibility(VISIBLE);
+        imgview.startAnimation(mRotateAnimation);
+    }
+
+    /**
+     * 关闭首页加载
+     */
+    public void setHomeLoadingFinish() {
+        mLlHome.setVisibility(VISIBLE);
+        mIvHome.setVisibility(INVISIBLE);
+        if (mRotateAnimation != null) {
+            mRotateAnimation.cancel();
+        }
+    }
+
+    /**
+     * 关闭关注页面加载
+     */
+    public void setFollowLoadingFinish() {
+        mLlGz.setVisibility(VISIBLE);
+        mIvGz.setVisibility(INVISIBLE);
+        if (mRotateAnimation != null) {
+            mRotateAnimation.cancel();
+        }
+    }
+
+    public void noChecked(View view) {
+        if (mViewNoChecked == null) {
+            mViewNoChecked = new ScaleAnimation(1, 1, 1, 0f,
+                    Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 1);
+            mViewNoChecked.setDuration(300);
+            mViewNoChecked.setFillAfter(true);
+        }
+        view.startAnimation(mViewNoChecked);
+    }
+
+    OnHomeMenuItemClickListener mOnHomeMenuClickListener;
+
+    public void setOnHomeMenuClickListener(OnHomeMenuItemClickListener onHomeMenuItemClickListener) {
+        mOnHomeMenuClickListener = onHomeMenuItemClickListener;
+    }
+
+    interface OnHomeMenuItemClickListener {
+        void onTabSelect(int postion);
+
+        void onTabReSelect(int postion);
+    }
+
+    boolean isOpen = true;
+
+    public void setLoadingOpen(boolean isOpen) {
+        this.isOpen = isOpen;
+    }
+
 
     /**
      * dp转px

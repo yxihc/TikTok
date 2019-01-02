@@ -8,127 +8,157 @@
     android:paddingLeft="20dp"
     android:paddingRight="30dp">
 
-    <LinearLayout
-        android:id="@+id/ll_home"
-        android:layout_width="wrap_content"
+    <FrameLayout
+        android:id="@+id/fl_home"
+        android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:gravity="center"
-        android:orientation="vertical">
+        android:layout_weight="1">
 
-        <TextView
-            android:id="@+id/tv_home"
+        <ImageView
+            android:id="@+id/iv_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/clicktwo"
+            android:visibility="invisible" />
+
+        <LinearLayout
+            android:id="@+id/ll_home"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_gravity="center"
             android:gravity="center"
-            android:text="首页"
-            android:textColor="@color/white"
-            android:textSize="20dp"
-            android:textStyle="bold" />
+            android:orientation="vertical">
 
-        <View
-            android:id="@+id/view_home"
-            android:layout_width="match_parent"
-            android:layout_height="4dp"
-            android:background="@color/white"></View>
-    </LinearLayout>
+            <TextView
+                android:id="@+id/tv_home"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="首页"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:textStyle="bold" />
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1" />
+            <View
+                android:id="@+id/view_home"
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:background="@color/white"></View>
+        </LinearLayout>
+    </FrameLayout>
 
-    <LinearLayout
-        android:id="@+id/ll_gz"
-        android:layout_width="wrap_content"
+    <FrameLayout
+        android:id="@+id/fl_gz"
+        android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_weight="1">
 
-        <TextView
-            android:id="@+id/tv_gz"
+        <ImageView
+            android:id="@+id/iv_gz"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/clicktwo"
+            android:visibility="invisible" />
+
+        <LinearLayout
+            android:id="@+id/ll_gz"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_gravity="center"
             android:gravity="center"
-            android:text="关注"
-            android:textColor="@color/white"
-            android:textSize="20dp"
-            android:textStyle="bold" />
+            android:orientation="vertical">
 
-        <View
-            android:id="@+id/view_gz"
-            android:layout_width="match_parent"
-            android:layout_height="4dp"
-            android:background="@color/white"></View>
-    </LinearLayout>
+            <TextView
+                android:id="@+id/tv_gz"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="关注"
+                android:textColor="@color/gray"
+                android:textSize="20dp"
+                android:textStyle="bold" />
 
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1" />
+            <View
+                android:id="@+id/view_gz"
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:background="@color/white"></View>
+        </LinearLayout>
+    </FrameLayout>
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/menu_add" />
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1" />
 
-    <LinearLayout
-        android:id="@+id/ll_message"
-        android:layout_width="wrap_content"
+    <FrameLayout
+        android:id="@+id/fl_message"
+        android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_weight="1">
 
-        <TextView
-            android:id="@+id/tv_message"
+        <LinearLayout
+
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_gravity="center"
             android:gravity="center"
-            android:text="消息"
-            android:textColor="@color/white"
-            android:textSize="20dp"
-            android:textStyle="bold" />
+            android:orientation="vertical">
 
-        <View
-            android:id="@+id/view_message"
-            android:layout_width="match_parent"
-            android:layout_height="4dp"
-            android:background="@color/white"></View>
-    </LinearLayout>
+            <TextView
+                android:id="@+id/tv_message"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="消息"
+                android:textColor="@color/gray"
+                android:textSize="20dp"
+                android:textStyle="bold" />
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1" />
+            <View
+                android:id="@+id/view_message"
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:background="@color/white"></View>
+        </LinearLayout>
+    </FrameLayout>
 
-    <LinearLayout
-        android:id="@+id/ll_me"
-        android:layout_width="wrap_content"
+    <FrameLayout
+        android:id="@+id/fl_me"
+        android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_weight="1">
 
-        <TextView
-            android:id="@+id/tv_me"
+        <LinearLayout
+
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_gravity="center"
             android:gravity="center"
-            android:text="我"
-            android:textColor="@color/white"
-            android:textSize="20dp"
-            android:textStyle="bold" />
+            android:orientation="vertical">
 
-        <View
-            android:id="@+id/view_me"
-            android:layout_width="match_parent"
-            android:layout_height="4dp"
-            android:background="@color/white"></View>
-    </LinearLayout>
+            <TextView
+                android:id="@+id/tv_me"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="我"
+                android:textColor="@color/gray"
+                android:textSize="20dp"
+                android:textStyle="bold" />
 
+            <View
+                android:id="@+id/view_me"
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:background="@color/white"></View>
+        </LinearLayout>
+    </FrameLayout>
 </LinearLayout>

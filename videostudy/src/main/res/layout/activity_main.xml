@@ -5,15 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".HomeActivity">
+    tools:context=".MainActivity">
 
-    <FrameLayout
+    <Button
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"></FrameLayout>
+        android:layout_height="wrap_content"
+        android:onClick="btn1"
+        android:text="通过三种方式绘制图片" />
 
-    <com.taopao.tiktok.HomeMenuLayout
-        android:id="@+id/homemenu"
+
+    <Button
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"></com.taopao.tiktok.HomeMenuLayout>
+        android:layout_height="wrap_content"
+        android:onClick="btn2"
+        android:text="Camera" />
+
 </LinearLayout>

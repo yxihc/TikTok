@@ -5,15 +5,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".HomeActivity">
+    tools:context=".ThreeImgActivity">
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"></FrameLayout>
 
-    <com.taopao.tiktok.HomeMenuLayout
-        android:id="@+id/homemenu"
+    <ImageView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"></com.taopao.tiktok.HomeMenuLayout>
+        android:layout_height="200dp"
+        android:src="@drawable/d" />
+
+    <SurfaceView
+        android:id="@+id/surfaceview"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="10dp" />
+
+
+    <com.taopao.videostudy.view.MyImg
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="10dp" />
 </LinearLayout>
