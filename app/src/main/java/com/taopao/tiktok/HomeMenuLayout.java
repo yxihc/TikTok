@@ -133,7 +133,6 @@ public class HomeMenuLayout extends FrameLayout {
         }
     }
 
-
     private void checkAnim(TextView tv, View view) {
         //设置字体颜色
         mTvHome.setTextColor(mContext.getResources().getColor(mCheckId == 0 ? R.color.white : R.color.gray));

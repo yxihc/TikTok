@@ -33,6 +33,7 @@ dependencies {
     implementation 'com.android.support.constraint:constraint-layout:1.1.2'
 
     implementation 'com.jakewharton:butterknife:8.8.1'
+    implementation 'com.android.support:support-v4:27.1.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
 
     //support
@@ -92,6 +93,14 @@ dependencies {
     annotationProcessor rootProject.ext.dependencies["dagger2-compiler"]
     implementation rootProject.ext.dependencies["annotations"]
 
+
+    implementation 'com.blankj:utilcode:1.19.2'
+
+    //沉浸式
+    implementation 'com.jaeger.statusbarutil:library:1.5.1'
+
+    // 状态栏沉浸：https://github.com/gyf-dev/ImmersionBar
+    implementation 'com.gyf.immersionbar:immersionbar:2.3.3-beta09'
     ////////////////////////////////////////////第三方SDK/////////////////////////////////////////////////////
 
 

@@ -58,7 +58,6 @@ public class ListActivity extends AppCompatActivity {
 
         mRv.setLayoutManager(new LinearLayoutManager(this));
 
-
         mWanAndroidAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
