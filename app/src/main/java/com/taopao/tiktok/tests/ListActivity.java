@@ -64,6 +64,7 @@ public class ListActivity extends AppCompatActivity {
                 Toast.makeText(ListActivity.this, mPage + "", Toast.LENGTH_SHORT).show();
             }
         });
+
     }
 
     boolean is = true;
