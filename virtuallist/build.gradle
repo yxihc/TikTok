@@ -37,6 +37,8 @@ dependencies {
 
 
     implementation(rootProject.ext.dependencies["recyclerview-v7"])
-    implementation(rootProject.ext.dependencies["BaseRecyclerViewAdapterHelper"])
+
+
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
 
 }

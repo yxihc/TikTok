@@ -6,18 +6,21 @@ import android.os.Message;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
 import android.view.ViewTreeObserver;
 import android.view.WindowManager;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
 import com.gyf.barlibrary.ImmersionBar;
-import com.jaeger.library.StatusBarUtil;
-import com.taopao.tiktok.utils.FragmentUtils;
+import com.taopao.commonsdk.RouterHub;
+import com.taopao.commonsdk.Utils;
 
 import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+@Route(path = RouterHub.APP_HOMEACTIVITY)
 public class HomeActivity extends AppCompatActivity {
     @BindView(R.id.homemenu)
     HomeMenuLayout mHomemenu;
@@ -97,6 +100,11 @@ public class HomeActivity extends AppCompatActivity {
             public void onTabReSelect(int postion) {
                 Log.d("mHomemenu", "onTabReSelect: " + postion);
                 mHandler.sendEmptyMessageDelayed(postion, 3000);
+            }
+
+            @Override
+            public void OnAddClick(View view) {
+                Utils.navigation(HomeActivity.this, RouterHub.CAMERA_HOMEACTIVITY);
             }
         });
     }

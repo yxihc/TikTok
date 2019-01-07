@@ -48,7 +48,6 @@ public class BaseApplication extends Application implements IApp {
             mAppDelegate.onCreate(this);
         }
         mContext = getApplicationContext();
-
         CrashReport.initCrashReport(getApplicationContext(), "c6dc9a5939", true);
     }
 

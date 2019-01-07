@@ -1,1 +1,1 @@
-include ':app', ':interview', ':annotation_processing', ':annotation', ':designpattern', ':delegateapp', ':virtuallist', ':videostudy'
+include ':app', ':virtuallist', ':videostudy', ':CommonSDK', ':CommonUI', ':module_gank', ':Umeng', ':module_camera'

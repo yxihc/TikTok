@@ -107,7 +107,7 @@ public class HomeMenuLayout extends FrameLayout {
     int mCheckId = 0;//当前选中的
     int mBeforeId = -1;//上一个选中的
 
-    @OnClick({R.id.fl_home, R.id.fl_gz, R.id.fl_message, R.id.fl_me})
+    @OnClick({R.id.fl_home, R.id.fl_gz, R.id.fl_message, R.id.fl_me, R.id.iv_add})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.fl_home:
@@ -129,6 +129,11 @@ public class HomeMenuLayout extends FrameLayout {
                 mBeforeId = mCheckId;
                 mCheckId = 3;
                 checked(mTvMe, mViewMe);
+                break;
+            case R.id.iv_add:
+                if (mOnHomeMenuClickListener != null) {
+                    mOnHomeMenuClickListener.OnAddClick(null);
+                }
                 break;
         }
     }
@@ -290,6 +295,8 @@ public class HomeMenuLayout extends FrameLayout {
         void onTabSelect(int postion);
 
         void onTabReSelect(int postion);
+
+        void OnAddClick(View view);
     }
 
     boolean isOpen = true;

@@ -2,13 +2,13 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/CommonSDK/CommonSDK.iml" filepath="$PROJECT_DIR$/CommonSDK/CommonSDK.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CommonUI/CommonUI.iml" filepath="$PROJECT_DIR$/CommonUI/CommonUI.iml" />
       <module fileurl="file://$PROJECT_DIR$/TikTok.iml" filepath="$PROJECT_DIR$/TikTok.iml" />
-      <module fileurl="file://$PROJECT_DIR$/annotation/annotation.iml" filepath="$PROJECT_DIR$/annotation/annotation.iml" />
-      <module fileurl="file://$PROJECT_DIR$/annotation_processing/annotation_processing.iml" filepath="$PROJECT_DIR$/annotation_processing/annotation_processing.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Umeng/Umeng.iml" filepath="$PROJECT_DIR$/Umeng/Umeng.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/delegateapp/delegateapp.iml" filepath="$PROJECT_DIR$/delegateapp/delegateapp.iml" />
-      <module fileurl="file://$PROJECT_DIR$/designpattern/designpattern.iml" filepath="$PROJECT_DIR$/designpattern/designpattern.iml" />
-      <module fileurl="file://$PROJECT_DIR$/interview/interview.iml" filepath="$PROJECT_DIR$/interview/interview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module_camera/module_camera.iml" filepath="$PROJECT_DIR$/module_camera/module_camera.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module_gank/module_gank.iml" filepath="$PROJECT_DIR$/module_gank/module_gank.iml" />
       <module fileurl="file://$PROJECT_DIR$/videostudy/videostudy.iml" filepath="$PROJECT_DIR$/videostudy/videostudy.iml" />
       <module fileurl="file://$PROJECT_DIR$/virtuallist/virtuallist.iml" filepath="$PROJECT_DIR$/virtuallist/virtuallist.iml" />
     </modules>

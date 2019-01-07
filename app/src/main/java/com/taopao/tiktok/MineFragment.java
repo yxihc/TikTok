@@ -67,20 +67,11 @@ public class MineFragment extends Fragment {
         }
     };
 
-
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
     }
-
-
-
-
-
-
-
-
 
     @Override
     public void onDestroyView() {

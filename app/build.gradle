@@ -1,112 +1,87 @@
 apply plugin: 'com.android.application'
+
 android {
     compileSdkVersion rootProject.ext.android["compileSdkVersion"]
     buildToolsVersion rootProject.ext.android["buildToolsVersion"]
+    useLibrary 'org.apache.http.legacy'
+
+    compileOptions {
+        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_8
+    }
+
     defaultConfig {
         applicationId "com.taopao.tiktok"
         minSdkVersion rootProject.ext.android["minSdkVersion"]
         targetSdkVersion rootProject.ext.android["targetSdkVersion"]
         versionCode rootProject.ext.android["versionCode"]
         versionName rootProject.ext.android["versionName"]
-
-
-        ndk {
-            // 设置支持的SO库架构
-            abiFilters 'armeabi' //, 'x86', 'armeabi-v7a', 'x86_64', 'arm64-v8a'
+        testInstrumentationRunner rootProject.ext.dependencies["androidJUnitRunner"]
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [moduleName: project.getName()]
+            }
         }
-
     }
     buildTypes {
-        release {
+        debug {
+            buildConfigField "boolean", "LOG_DEBUG", "true"
+            buildConfigField "boolean", "USE_CANARY", "true"
+            buildConfigField "boolean", "IS_BUILD_MODULE", "${isBuildModule}"
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        release {
+            buildConfigField "boolean", "LOG_DEBUG", "false"
+            buildConfigField "boolean", "USE_CANARY", "false"
+            buildConfigField "boolean", "IS_BUILD_MODULE", "${isBuildModule}"
+            minifyEnabled true
+            shrinkResources true
+            zipAlignEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    compileOptions {
-        targetCompatibility JavaVersion.VERSION_1_8
-        sourceCompatibility JavaVersion.VERSION_1_8
+
+    lintOptions {
+        disable 'InvalidPackage'
+        disable "ResourceType"
+        abortOnError false
     }
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    if (!isBuildModule.toBoolean()) {
+        //在宿主 App 中使用 implementation 依赖业务组件, 业务组件的代码就会完全暴露给宿主 App, 不利于代码的隔离
+        //使用 runtimeOnly 依赖业务组件, 可实现业务组件的代码在编译时对宿主 App 不可见, 仅在运行时对宿主 App 可见
+        runtimeOnly project(":module_gank")
+        runtimeOnly project(":module_camera")
+    }
+    implementation project(":CommonSDK")
+    implementation project(":CommonUI")
 
-    implementation 'com.jakewharton:butterknife:8.8.1'
-    implementation 'com.android.support:support-v4:27.1.1'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
-
-    //support
-    implementation(rootProject.ext.dependencies["support-v4"]) {
-        exclude module: 'support-annotations'
-    }
-    implementation(rootProject.ext.dependencies["appcompat-v7"]) {
-        exclude module: 'support-annotations'
-    }
-    implementation(rootProject.ext.dependencies["recyclerview-v7"]) {
-        exclude module: 'support-annotations'
-    }
-    implementation rootProject.ext.dependencies["design"]
-    implementation rootProject.ext.dependencies["annotations"]
-
-    //rx
-    implementation rootProject.ext.dependencies["rxjava"]
-    implementation(rootProject.ext.dependencies["rxandroid"]) {
-        exclude module: 'rxjava'
-    }
-    implementation rootProject.ext.dependencies["rxpermissions"]
-    //network
-    api rootProject.ext.dependencies["retrofit"]
-    implementation(rootProject.ext.dependencies["retrofit-converter-gson"]) {
-        exclude module: 'gson'
-        exclude module: 'okhttp'
-        exclude module: 'okio'
-        exclude module: 'retrofit'
-    }
-    implementation rootProject.ext.dependencies["gson"]
-    implementation(rootProject.ext.dependencies["retrofit-adapter-rxjava"]) {
-        exclude module: 'rxjava'
-        exclude module: 'okhttp'
-        exclude module: 'retrofit'
-        exclude module: 'okio'
-    }
-
-    //图片
-    implementation rootProject.ext.dependencies["glide"]
-    annotationProcessor(rootProject.ext.dependencies["glide-compiler"]) {
-        exclude module: 'jsr305'
-    }
-
-    //butterknife
-    implementation(rootProject.ext.dependencies["butterknife"]) {
-        exclude module: 'support-annotations'
-        exclude module: 'support-compat'
-    }
-
-    //recyclerview的adapter
-    implementation(rootProject.ext.dependencies["BaseRecyclerViewAdapterHelper"]) {
-        exclude group: "com.android.support"
-    }
-
-    //dagger2
-    implementation rootProject.ext.dependencies["dagger2"]
+    //tools
+    annotationProcessor rootProject.ext.dependencies["arouter-compiler"]
     annotationProcessor rootProject.ext.dependencies["dagger2-compiler"]
-    implementation rootProject.ext.dependencies["annotations"]
+    //view
+    annotationProcessor(rootProject.ext.dependencies["butterknife-compiler"]) {
+        exclude module: 'support-annotations'
+    }
+    //test
+    testImplementation rootProject.ext.dependencies["junit"]
+    debugImplementation rootProject.ext.dependencies["canary-debug"]
+    releaseImplementation rootProject.ext.dependencies["canary-release"]
+    testImplementation rootProject.ext.dependencies["canary-release"]
 
 
-    implementation 'com.blankj:utilcode:1.19.2'
-
-    //沉浸式
-    implementation 'com.jaeger.statusbarutil:library:1.5.1'
 
     // 状态栏沉浸：https://github.com/gyf-dev/ImmersionBar
     implementation 'com.gyf.immersionbar:immersionbar:2.3.3-beta09'
     ////////////////////////////////////////////第三方SDK/////////////////////////////////////////////////////
 
-
     implementation 'com.tencent.bugly:crashreport:2.8.6'
     //其中latest.release指代最新Bugly SDK版本号，也可以指定明确的版本号，例如2.2.0
     implementation 'com.tencent.bugly:nativecrashreport:3.6.0'
     //其中latest.release指代最新Bugly NDK版本号，也可以指定明确的版本号，例如3.0
-
 }
