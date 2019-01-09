@@ -16,7 +16,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    resourcePrefix "public_" //给 Module 内的资源名增加前缀, 避免资源名冲突
+//    resourcePrefix "public_" //给 Module 内的资源名增加前缀, 避免资源名冲突
 }
 
 dependencies {
@@ -38,6 +38,10 @@ dependencies {
     // 圆形的ImageView：https://github.com/hdodenhof/CircleImageView
     api 'de.hdodenhof:circleimageview:2.2.0'
 
+
+
     // 状态栏沉浸：https://github.com/gyf-dev/ImmersionBar
-    implementation 'com.gyf.immersionbar:immersionbar:2.3.3-beta09'
+    api 'com.gyf.immersionbar:immersionbar:2.3.3-beta09'
+
+
 }

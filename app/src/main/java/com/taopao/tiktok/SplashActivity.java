@@ -36,7 +36,6 @@ public class SplashActivity extends AppCompatActivity {
         setContentView(R.layout.activity_splash);
         ButterKnife.bind(this);
 
-
         ImmersionBar.with(this)
                 .statusBarDarkFont(true)
                 .transparentNavigationBar()//透明导航栏，不写默认黑色(设置此方法，fullScreen()方法自动为true)
@@ -44,7 +43,10 @@ public class SplashActivity extends AppCompatActivity {
 
         initStartAnim();
 
+        AppSettingUtils.setFirstStart(false);
         if (AppSettingUtils.isFirstStart()) {
+            //进入第一次欢迎页
+        } else {
             //跳转主页
             Observable.timer(2, TimeUnit.SECONDS)
                     .observeOn(AndroidSchedulers.mainThread())
@@ -55,8 +57,6 @@ public class SplashActivity extends AppCompatActivity {
                             finish();
                         }
                     });
-        } else {
-            //进入第一次欢迎页
         }
 
 

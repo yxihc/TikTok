@@ -35,7 +35,7 @@ public class MainActivity extends BaseActivity<MainPresenter> {
 
     @Override
     public int layoutResID() {
-        AppSettingUtils.setFirstStart(true);
+        AppSettingUtils.setFirstStart(false);
         return R.layout.activity_main;
     }
 

@@ -7,6 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/TikTok.iml" filepath="$PROJECT_DIR$/TikTok.iml" />
       <module fileurl="file://$PROJECT_DIR$/Umeng/Umeng.iml" filepath="$PROJECT_DIR$/Umeng/Umeng.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cameraview/cameraview.iml" filepath="$PROJECT_DIR$/cameraview/cameraview.iml" />
       <module fileurl="file://$PROJECT_DIR$/module_camera/module_camera.iml" filepath="$PROJECT_DIR$/module_camera/module_camera.iml" />
       <module fileurl="file://$PROJECT_DIR$/module_gank/module_gank.iml" filepath="$PROJECT_DIR$/module_gank/module_gank.iml" />
       <module fileurl="file://$PROJECT_DIR$/videostudy/videostudy.iml" filepath="$PROJECT_DIR$/videostudy/videostudy.iml" />

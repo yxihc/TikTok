@@ -3,12 +3,14 @@ package com.taopao.tiktok.app;
 import android.app.Application;
 import android.content.Context;
 import android.support.annotation.NonNull;
+import android.view.Gravity;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.jess.arms.base.delegate.AppLifecycles;
 import com.jess.arms.utils.ArmsUtils;
 import com.squareup.leakcanary.LeakCanary;
 import com.squareup.leakcanary.RefWatcher;
+import com.taopao.rxtoast.RxToast;
 import com.taopao.tiktok.BuildConfig;
 import com.tencent.bugly.crashreport.CrashReport;
 
@@ -44,6 +46,19 @@ public class AppLifecyclesImpl implements AppLifecycles {
         ARouter.init(application); // 尽可能早，推荐在Application中初始化
         //bugly
         CrashReport.initCrashReport(application, "c6dc9a5939", true);
+
+
+        RxToast.init(application)
+                .setBackgroundColor("#CC000000")
+                .setTextColor("#FFFFFF")
+                .setGravity(Gravity.CENTER)
+                .setPadding(16, 16, 12, 12)
+                .setMaxLines(2)
+                .setTextSize(12)
+                .setZ(30)
+                .setMaxLines(3)
+                .apply();
+
     }
 
     @Override

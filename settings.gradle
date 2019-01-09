@@ -1,1 +1,1 @@
-include ':app', ':virtuallist', ':videostudy', ':CommonSDK', ':CommonUI', ':module_gank', ':Umeng', ':module_camera'
+include ':app', ':virtuallist', ':videostudy', ':CommonSDK', ':CommonUI', ':module_gank', ':Umeng', ':module_camera', ':cameraview'
