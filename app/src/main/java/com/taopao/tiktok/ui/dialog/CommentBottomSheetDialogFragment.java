@@ -41,8 +41,8 @@ public class CommentBottomSheetDialogFragment extends BottomSheetDialogFragment 
         // 在这里将view的高度设置为精确高度，即可屏蔽向上滑动不占全屏的手势。
         //如果不设置高度的话 会默认向上滑动时dialog覆盖全屏
         View view = inflater.inflate(R.layout.dialog_comment, container, false);
-        view.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
-                getScreenHeight(getActivity()) / 2));
+//        view.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
+//                getScreenHeight(getActivity()) / 2));
         return view;
     }
 
@@ -85,7 +85,7 @@ public class CommentBottomSheetDialogFragment extends BottomSheetDialogFragment 
 
         @Override
         public void onBindViewHolder(MyViewHolder holder, int position) {
-            holder.text.setText(String.valueOf(position));
+//            holder.text.setText(String.valueOf(position));
         }
 
         @Override
@@ -94,11 +94,11 @@ public class CommentBottomSheetDialogFragment extends BottomSheetDialogFragment 
         }
 
         public class MyViewHolder extends RecyclerView.ViewHolder {
-            final TextView text;
+//            final TextView text;
 
             MyViewHolder(LayoutInflater inflater, ViewGroup parent) {
                 super(inflater.inflate(R.layout.recycle_item_list_dialog, parent, false));
-                text = (TextView) itemView.findViewById(R.id.text);
+//                text = (TextView) itemView.findViewById(R.id.text);
             }
         }
 
@@ -119,6 +119,9 @@ public class CommentBottomSheetDialogFragment extends BottomSheetDialogFragment 
         Window win = dialog.getWindow();
         WindowManager.LayoutParams params = win.getAttributes();
         win.setSoftInputMode(params.SOFT_INPUT_ADJUST_NOTHING);
+
+        //这里设置dialog的进出动画
+        win.setWindowAnimations(R.style.DialogBottomAnim);
         return dialog;
     }
 

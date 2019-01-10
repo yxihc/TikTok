@@ -9,6 +9,9 @@
         <item name="android:windowBackground">@android:color/transparent</item><!--背景透明-->
         <item name="android:backgroundDimEnabled">false</item><!--模糊-->
         <item name="android:windowSoftInputMode">adjustPan|stateHidden</item>
+        <!-- 动画效果 -->
+        <!--<item name="android:windowEnterAnimation">@anim/dialog_bottom_in</item>-->
+        <!--<item name="android:windowExitAnimation">@anim/dialog_bottom_out</item>-->
     </style>
 
 
