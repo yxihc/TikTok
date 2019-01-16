@@ -47,6 +47,8 @@ public class VerVideoFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_ver_video, container, false);
         unbinder = ButterKnife.bind(this, view);
+
+
         return view;
     }
 
@@ -84,7 +86,6 @@ public class VerVideoFragment extends Fragment {
             }
         };
 
-
         pagerSnapHelper.attachToRecyclerView(mRecyclerview);
         // ---布局管理器---
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
@@ -105,6 +106,10 @@ public class VerVideoFragment extends Fragment {
 
             }
         }, mRecyclerview);
+
+
+
+        //
     }
 
     class MyAdapter extends BaseQuickAdapter<String, BaseViewHolder> {

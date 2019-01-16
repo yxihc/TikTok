@@ -20,6 +20,7 @@ import android.widget.Toast;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.taopao.cameraview.RxCameraView;
+import com.taopao.cameraview.tool.RxCameraTool;
 import com.taopao.commonsdk.RouterHub;
 
 import java.io.File;
@@ -135,11 +136,13 @@ public class CameraHomeActivity extends AppCompatActivity {
 
     public void tackPhoto(View view) {
 
-        if (mRxcameraview != null) {
-            int facing = mRxcameraview.getFacing();
-            mRxcameraview.setFacing(facing == RxCameraView.FACING_FRONT ?
-                    RxCameraView.FACING_BACK : RxCameraView.FACING_FRONT);
-        }
+//        if (mRxcameraview != null) {
+//            int facing = mRxcameraview.getFacing();
+//            mRxcameraview.setFacing(facing == RxCameraView.FACING_FRONT ?
+//                    RxCameraView.FACING_BACK : RxCameraView.FACING_FRONT);
+//        }
+
+        RxCameraTool.takePic(this, mRxcameraview);
 
 
 //        if (mCameraView != null) {

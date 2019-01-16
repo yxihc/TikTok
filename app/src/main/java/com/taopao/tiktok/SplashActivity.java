@@ -1,6 +1,7 @@
 package com.taopao.tiktok;
 
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.gyf.barlibrary.ImmersionBar;
+import com.jess.arms.utils.ArmsUtils;
 import com.taopao.commonsdk.AppSettingUtils;
 import com.taopao.commonsdk.RouterHub;
 import com.taopao.commonsdk.Utils;
@@ -35,14 +37,11 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
         ButterKnife.bind(this);
-
         ImmersionBar.with(this)
                 .statusBarDarkFont(true)
                 .transparentNavigationBar()//透明导航栏，不写默认黑色(设置此方法，fullScreen()方法自动为true)
                 .init();   //默认状态栏字体颜色为黑色
-
         initStartAnim();
-
         AppSettingUtils.setFirstStart(false);
         if (AppSettingUtils.isFirstStart()) {
             //进入第一次欢迎页
@@ -58,8 +57,6 @@ public class SplashActivity extends AppCompatActivity {
                         }
                     });
         }
-
-
     }
 
     private static final int ANIM_TIME = 1000;
@@ -81,5 +78,7 @@ public class SplashActivity extends AppCompatActivity {
         RotateAnimation ra = new RotateAnimation(180, 360, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
         ra.setDuration(ANIM_TIME);
         mIvLauncherName.startAnimation(ra);
+
+
     }
 }

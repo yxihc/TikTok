@@ -2,6 +2,7 @@ package com.taopao.cameraview.tool;
 
 import android.content.Context;
 import android.hardware.Camera;
+import android.os.Handler;
 
 import com.taopao.cameraview.RxCameraView;
 
@@ -51,6 +52,20 @@ public class RxCameraTool {
     }
 
     public static void takePic(Context mContext, final RxCameraView mCameraView) {
+        if (mCameraView.isCameraOpened()) {
+            mCameraView.takePicture();
+        } else {
+            mCameraView.start();
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    /**
+                     * 延时执行的代码
+                     */
+                    mCameraView.takePicture();
+                }
+            }, 500); // 延时1秒
+        }
     }
 
     public static void initCameraEvent(final Context mContext,
