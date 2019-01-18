@@ -28,12 +28,12 @@ public class CameraLauncherActivity extends AppCompatActivity {
                 .statusBarDarkFont(true)
                 .transparentNavigationBar()//透明导航栏，不写默认黑色(设置此方法，fullScreen()方法自动为true)
                 .init();   //默认状态栏字体颜色为黑色
-
     }
 
     public void joinMain(View view) {
         RxPermissions rxPermissions = new RxPermissions(CameraLauncherActivity.this);
-        rxPermissions.requestEachCombined(RequestPermissions.CAMERA)
+        rxPermissions.requestEachCombined(RequestPermissions.CAMERA, RequestPermissions.RECORD_AUDIO, RequestPermissions.READ_EXTERNAL_STORAGE,
+                RequestPermissions.WRITE_EXTERNAL_STORAGE)
                 .subscribe(new Consumer<Permission>() {
                     @Override
                     public void accept(Permission permission) throws Exception {
@@ -64,4 +64,7 @@ public class CameraLauncherActivity extends AppCompatActivity {
                 });
     }
 
+    public void audio(View view) {
+        Utils.navigation(CameraLauncherActivity.this, CameraRouterHub.CAMERA_AUDIO_ACTIVITY);
+    }
 }

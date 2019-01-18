@@ -4,6 +4,7 @@ import android.app.Application;
 import android.view.Gravity;
 
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.blankj.utilcode.util.Utils;
 import com.taopao.rxtoast.RxToast;
 
 /**
@@ -30,6 +31,9 @@ public class TestApp extends Application {
                 .setZ(30)
                 .setMaxLines(3)
                 .apply();
+
+        Utils.init(this);
+
 
     }
 }

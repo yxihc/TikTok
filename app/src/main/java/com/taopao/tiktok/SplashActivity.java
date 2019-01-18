@@ -2,6 +2,7 @@ package com.taopao.tiktok;
 
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
@@ -78,7 +79,6 @@ public class SplashActivity extends AppCompatActivity {
         RotateAnimation ra = new RotateAnimation(180, 360, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
         ra.setDuration(ANIM_TIME);
         mIvLauncherName.startAnimation(ra);
-
 
     }
 }

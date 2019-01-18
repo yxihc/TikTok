@@ -9,4 +9,8 @@ import com.taopao.commonsdk.RouterHub;
  */
 public interface CameraRouterHub {
     String CAMERA_LAUNCHERACTIVITY = RouterHub.CAMERA + "/CameraHomeActivity";
+
+
+    String CAMERA_AUDIO_ACTIVITY = RouterHub.CAMERA + "/AudioActivity";
+
 }

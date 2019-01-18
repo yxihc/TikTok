@@ -41,5 +41,11 @@
         android:onClick="joinMain"
         android:text="进入主页" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:onClick="audio"
+        android:text="Audio" />
 
 </LinearLayout>

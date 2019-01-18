@@ -24,7 +24,6 @@ public interface RouterHub {
      */
     String GANK_HOMEACTIVITY = GANK + "/GankHomeActivity";
 
-
     /**
      * 相机分组
      */
