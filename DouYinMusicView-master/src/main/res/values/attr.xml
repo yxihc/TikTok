@@ -1,0 +1,13 @@
+<resources>
+    <declare-styleable name="CircleMusicView">
+        <attr name="circle_music_view_progress_width" format="dimension"/>
+        <attr name="circle_music_view_progress_slot_color" format="color"/>
+        <attr name="circle_music_view_progress_buffer_color" format="color"/>
+        <attr name="circle_music_view_progress_color" format="color"/>
+    </declare-styleable>
+
+    <declare-styleable name="MusicalNoteLayout">
+        <attr name="circle_music_view_res" format="reference"/>
+        <attr name="circle_music_view_size" format="dimension"/>
+    </declare-styleable>
+</resources>

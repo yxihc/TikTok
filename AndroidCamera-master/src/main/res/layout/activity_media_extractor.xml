@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".blocks.mediaExtractor.MediaExtractorActivity">
+    <com.aserbao.androidcustomcamera.base.utils.FlowLayout
+        android:id="@+id/decoder_flow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:text="解码"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <Button
+            android:text="音频解析每一帧数据"
+            android:id="@+id/audio_extractor_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:text="分离Mp4中的音频生成Mp3"
+            android:id="@+id/extractor_mp3_from_mp4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:text="分离Mp4中的视频生成无声音的Mp4"
+            android:id="@+id/extractor_no_voice_mp4_from_mp4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:text="分离视频中的音视频"
+            android:id="@+id/extractor_video_and_audio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:text="合成视频1的音频和视频2的图像"
+            android:id="@+id/exchange_video_and_audio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:text="解码AAC格式音频并播放"
+            android:id="@+id/decoder_aac_and_player"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:text="解码Mp3格式音频并播放"
+            android:id="@+id/decoder_mp3_and_player"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </com.aserbao.androidcustomcamera.base.utils.FlowLayout>
+    <com.aserbao.androidcustomcamera.base.utils.FlowLayout
+        android:layout_below="@+id/decoder_flow"
+        android:id="@+id/encoder_flow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:text="编码"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <Button
+            android:text="录音编码成aac格式的音频文件"
+            android:id="@+id/record_and_encoder_mp3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/record_mp3_stop"
+            android:text="结束录制"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </com.aserbao.androidcustomcamera.base.utils.FlowLayout>
+    <com.aserbao.androidcustomcamera.base.utils.FlowLayout
+        android:layout_below="@+id/encoder_flow"
+        android:id="@+id/translate_flow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:text="转码"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <Button
+            android:text="mp3格式转成aac格式音频"
+            android:id="@+id/mp3_translate_aac_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </com.aserbao.androidcustomcamera.base.utils.FlowLayout>
+    <com.aserbao.androidcustomcamera.blocks.mediaExtractor.primary.FrequencyView
+        android:id="@+id/frequency_view"
+        android:rotation="180"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="100dp" />
+</RelativeLayout>

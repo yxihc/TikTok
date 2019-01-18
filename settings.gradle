@@ -1,1 +1,1 @@
-include ':app', ':virtuallist', ':videostudy', ':CommonSDK', ':CommonUI', ':module_gank', ':Umeng', ':module_camera', ':cameraview'
+include ':app', ':virtuallist', ':videostudy', ':CommonSDK', ':CommonUI', ':module_gank', ':Umeng', ':module_camera', ':cameraview', ':DouYinMusicView-master', ':AndroidCamera-master', ':TikTokDemo-master'

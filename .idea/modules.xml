@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/AndroidCamera-master/AndroidCamera-master.iml" filepath="$PROJECT_DIR$/AndroidCamera-master/AndroidCamera-master.iml" />
       <module fileurl="file://$PROJECT_DIR$/CommonSDK/CommonSDK.iml" filepath="$PROJECT_DIR$/CommonSDK/CommonSDK.iml" />
       <module fileurl="file://$PROJECT_DIR$/CommonUI/CommonUI.iml" filepath="$PROJECT_DIR$/CommonUI/CommonUI.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DouYinMusicView-master/DouYinMusicView-master.iml" filepath="$PROJECT_DIR$/DouYinMusicView-master/DouYinMusicView-master.iml" />
       <module fileurl="file://$PROJECT_DIR$/TikTok.iml" filepath="$PROJECT_DIR$/TikTok.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TikTokDemo-master/TikTokDemo-master.iml" filepath="$PROJECT_DIR$/TikTokDemo-master/TikTokDemo-master.iml" />
       <module fileurl="file://$PROJECT_DIR$/Umeng/Umeng.iml" filepath="$PROJECT_DIR$/Umeng/Umeng.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/cameraview/cameraview.iml" filepath="$PROJECT_DIR$/cameraview/cameraview.iml" />
