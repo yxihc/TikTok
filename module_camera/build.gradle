@@ -6,8 +6,7 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    api project(':CommonUI')
-    api project(':CommonSDK')
+    implementation project(':CommonUI')
+    implementation project(':CommonSDK')
     implementation project(':cameraview')
-    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
 }
