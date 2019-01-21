@@ -17,4 +17,16 @@
         android:layout_height="wrap_content"
         android:onClick="tackPhoto"
         android:text="切换摄像头" />
+
+    <com.taopao.commonui.widget.CircleRecordView
+        android:id="@+id/record_start"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:CircleAlignParentBottom="true"
+        app:CircleDynamicSize="100dp"
+        app:CircleImageSize="80dp"
+        app:CircleMarginBottom="15dp"
+        app:CircleMaxStrokeWidth="10dp"
+        app:CircleMinStrokeWidth="5dp"
+        app:CircleStatusSize="80dp" />
 </FrameLayout>

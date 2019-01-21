@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CircleRecordView">
+        <attr name="CircleStatusSize" format="dimension" />
+        <attr name="CircleDynamicSize" format="dimension" />
+        <attr name="CircleImageSize" format="dimension" />
+        <attr name="CircleBackgroundStartColor" format="color" />
+        <attr name="CircleBackgroundEndColor" format="color" />
+        <attr name="CircleNotTouchStartColor" format="color" />
+        <attr name="CircleNotTouchEndColor" format="color" />
+        <attr name="CircleImageRes" format="reference" />
+        <attr name="CircleAlignParentBottom" format="boolean" />
+        <attr name="CircleMarginBottom" format="dimension" />
+        <attr name="CircleMaxStrokeWidth" format="dimension" />
+        <attr name="CircleMinStrokeWidth" format="dimension" />
+    </declare-styleable>
+
+</resources>

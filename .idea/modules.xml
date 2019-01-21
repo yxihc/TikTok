@@ -14,7 +14,6 @@
       <module fileurl="file://$PROJECT_DIR$/module_camera/module_camera.iml" filepath="$PROJECT_DIR$/module_camera/module_camera.iml" />
       <module fileurl="file://$PROJECT_DIR$/module_gank/module_gank.iml" filepath="$PROJECT_DIR$/module_gank/module_gank.iml" />
       <module fileurl="file://$PROJECT_DIR$/videostudy/videostudy.iml" filepath="$PROJECT_DIR$/videostudy/videostudy.iml" />
-      <module fileurl="file://$PROJECT_DIR$/virtuallist/virtuallist.iml" filepath="$PROJECT_DIR$/virtuallist/virtuallist.iml" />
     </modules>
   </component>
 </project>

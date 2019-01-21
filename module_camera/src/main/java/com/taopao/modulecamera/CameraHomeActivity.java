@@ -7,21 +7,18 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.HandlerThread;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
-import android.view.Window;
 import android.view.WindowManager;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.taopao.cameraview.RxCameraView;
 import com.taopao.cameraview.tool.RxCameraTool;
 import com.taopao.commonsdk.RouterHub;
+import com.taopao.commonui.widget.CircleRecordView;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -35,6 +32,8 @@ import butterknife.ButterKnife;
 public class CameraHomeActivity extends AppCompatActivity {
     @BindView(R2.id.rxcameraview)
     RxCameraView mRxcameraview;
+    @BindView(R2.id.record_start)
+    CircleRecordView mRecordStart;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +48,8 @@ public class CameraHomeActivity extends AppCompatActivity {
         if (mRxcameraview != null) {
             mRxcameraview.addCallback(mCallback);
         }
+//        mRecordStart.
+
     }
 
     private Handler mBackgroundHandler;
@@ -143,7 +144,6 @@ public class CameraHomeActivity extends AppCompatActivity {
 //        }
 
         RxCameraTool.takePic(this, mRxcameraview);
-
 
 //        if (mCameraView != null) {
 //            mCurrentFlash = (mCurrentFlash + 1) % FLASH_OPTIONS.length;
