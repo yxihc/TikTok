@@ -21,7 +21,6 @@ public class MediaRecorderManager {
 
     public String mFilePath = "";
 
-
     private MediaRecorderManager() {
     }
 
@@ -93,7 +92,6 @@ public class MediaRecorderManager {
             File file = new File(mFilePath);
             if (file.exists())
                 file.delete();
-
             mFilePath = "";
         } finally {
             isStart = false;

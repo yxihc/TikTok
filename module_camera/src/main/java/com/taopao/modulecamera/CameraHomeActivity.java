@@ -48,8 +48,22 @@ public class CameraHomeActivity extends AppCompatActivity {
         if (mRxcameraview != null) {
             mRxcameraview.addCallback(mCallback);
         }
-//        mRecordStart.
+        mRecordStart.setOnRecordChangeListener(new CircleRecordView.OnRecordChangeListener() {
+            @Override
+            public void onEventDown() {
+//按下录制
+            }
 
+            @Override
+            public void onEventUp() {
+//松开录制
+            }
+
+            @Override
+            public void onDontTouch() {
+
+            }
+        });
     }
 
     private Handler mBackgroundHandler;

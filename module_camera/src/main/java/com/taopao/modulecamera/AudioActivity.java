@@ -17,7 +17,7 @@ import java.io.IOException;
 import java.util.Calendar;
 import java.util.Locale;
 
-@Route(path = CameraRouterHub.CAMERA_AUDIO_ACTIVITY)
+//@Route(path = CameraRouterHub.CAMERA_AUDIO_ACTIVITY)
 public class AudioActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
