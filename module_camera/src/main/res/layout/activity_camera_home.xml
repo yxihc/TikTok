@@ -18,6 +18,13 @@
         android:onClick="tackPhoto"
         android:text="切换摄像头" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:onClick="cout"
+        android:text="倒计时" />
+
     <com.taopao.commonui.widget.CircleRecordView
         android:id="@+id/record_start"
         android:layout_width="match_parent"

@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
+import com.taopao.rxtoast.RxToast;
 import com.taopao.tiktok.ui.dialog.CommentBottomSheetDialogFragment;
 
 import java.util.ArrayList;
@@ -68,8 +69,7 @@ public class VerVideoFragment extends Fragment {
                 int targetPos = super.findTargetSnapPosition(layoutManager, velocityX, velocityY);
                 Log.e("xiaxl: ", "targetPos: " + targetPos);
 
-                Toast.makeText(getActivity(), "滑到到 " + targetPos + "位置", Toast.LENGTH_SHORT).show();
-
+                RxToast.show("滑到到 " + targetPos + "位置");
                 return targetPos;
             }
 
@@ -106,7 +106,6 @@ public class VerVideoFragment extends Fragment {
 
             }
         }, mRecyclerview);
-
 
 
         //

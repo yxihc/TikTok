@@ -9,7 +9,6 @@ public class Utils {
     private Utils() {
         throw new IllegalStateException("you can't instantiate me!");
     }
-
     /**
      * 使用 {@link ARouter} 根据 {@code path} 跳转到对应的页面, 这个方法因为没有使用 {@link Activity}跳转
      * 所以 {@link ARouter} 会自动给 {@link android.content.Intent} 加上 Intent.FLAG_ACTIVITY_NEW_TASK
@@ -20,7 +19,6 @@ public class Utils {
     public static void navigation(String path) {
         ARouter.getInstance().build(path).navigation();
     }
-
     /**
      * 使用 {@link ARouter} 根据 {@code path} 跳转到对应的页面, 如果参数 {@code context} 传入的不是 {@link Activity}
      * {@link ARouter} 就会自动给 {@link android.content.Intent} 加上 Intent.FLAG_ACTIVITY_NEW_TASK

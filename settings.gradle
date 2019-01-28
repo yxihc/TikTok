@@ -1,1 +1,1 @@
-include ':app', ':videostudy', ':CommonSDK', ':CommonUI', ':Umeng', ':module_camera', ':cameraview', ':DouYinMusicView-master', ':AndroidCamera-master', ':TikTokDemo-master', ':audio'
+include ':app', ':videostudy', ':CommonSDK', ':CommonUI', ':Umeng', ':module_camera', ':cameraview', ':AndroidCamera-master', ':TikTokDemo-master', ':module_audio'

@@ -1,25 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="0dp"
         android:background="@color/colorPrimaryDark" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        android:layout_centerInParent="true"
         android:src="@drawable/video_pause" />
 
     <LinearLayout
+        android:id="@+id/ll_right"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="right|bottom"
-        android:layout_marginRight="15dp"
-        android:layout_marginBottom="100dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="3dp"
+        android:layout_marginBottom="150dp"
         android:gravity="center_horizontal"
         android:orientation="vertical">
 
@@ -27,6 +32,7 @@
             android:id="@+id/iv_start"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/ll_right"
             android:src="@drawable/start_white" />
 
         <TextView
@@ -67,4 +73,21 @@
             android:text="1540"
             android:textColor="@color/white" />
     </LinearLayout>
-</FrameLayout>
+
+    <RelativeLayout
+        android:id="@+id/ll_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <com.taopao.commonui.widget.music.MusicalNoteLayout
+            android:id="@+id/music_note_layout"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="5dp"
+            app:circle_music_view_res="@mipmap/ic_launcher" />
+    </RelativeLayout>
+</RelativeLayout>

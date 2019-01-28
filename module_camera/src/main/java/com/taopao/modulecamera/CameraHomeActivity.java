@@ -1,17 +1,26 @@
 package com.taopao.modulecamera;
 
 import android.Manifest;
+import android.app.Dialog;
 import android.content.pm.PackageManager;
+import android.content.res.Resources;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.widget.PopupWindow;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
@@ -19,11 +28,13 @@ import com.taopao.cameraview.RxCameraView;
 import com.taopao.cameraview.tool.RxCameraTool;
 import com.taopao.commonsdk.RouterHub;
 import com.taopao.commonui.widget.CircleRecordView;
+import com.taopao.commonui.widget.ThumbnailCountDownTimeView;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.text.DecimalFormat;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -51,12 +62,12 @@ public class CameraHomeActivity extends AppCompatActivity {
         mRecordStart.setOnRecordChangeListener(new CircleRecordView.OnRecordChangeListener() {
             @Override
             public void onEventDown() {
-//按下录制
+                //按下录制
             }
 
             @Override
             public void onEventUp() {
-//松开录制
+                //松开录制
             }
 
             @Override
@@ -166,6 +177,13 @@ public class CameraHomeActivity extends AppCompatActivity {
 //            mCameraView.setFlash(FLASH_OPTIONS[mCurrentFlash]);
 //        }
 
+    }
+
+    public void cout(View view) {
+        View showCountDown = LayoutInflater.from(this).inflate(R.layout.dialog_countdown, null);
+        AlertDialog show = new AlertDialog.Builder(this)
+                .setView(showCountDown)
+                .show();
     }
 
 }

@@ -1,6 +1,5 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <string name="app_name" tools:ignore="ResourceName">module_camera</string>
-
+    <string name="app_name" tools:ignore="ResourceName">audio</string>
     <string name="per" tools:ignore="ResourceName">当前状态无法拍摄，请尝试以下方案解决：\n \n
         1、未开启拍摄权限：再设置应用权限中允许使用拍摄和录音权限 \n \n
         2、摄像头被其他应用占用，请关闭其他应用程序或重启手机 \n \n
