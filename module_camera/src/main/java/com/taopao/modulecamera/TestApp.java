@@ -3,6 +3,7 @@ package com.taopao.modulecamera;
 import android.app.Application;
 import android.content.Context;
 import android.view.Gravity;
+import android.webkit.WebView;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.blankj.utilcode.util.Utils;
@@ -42,6 +43,8 @@ public class TestApp extends Application {
             @Override
             public void overrideUrlLoading(Context context, String s) {
                 // 使用自己的H5容器打开这个链接
+                WebView webView = new WebView(context);
+                webView.loadUrl(s);
             }
         });
 

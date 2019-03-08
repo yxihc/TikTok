@@ -4,6 +4,7 @@ import android.app.Application;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.view.Gravity;
+import android.webkit.WebView;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.didichuxing.doraemonkit.DoraemonKit;
@@ -65,6 +66,12 @@ public class AppLifecyclesImpl implements AppLifecycles {
             @Override
             public void overrideUrlLoading(Context context, String s) {
                 // 使用自己的H5容器打开这个链接
+                // 使用自己的H5容器打开这个链接
+                WebView webView = new WebView(context);
+
+
+                webView.loadUrl(s);
+
             }
         });
 
