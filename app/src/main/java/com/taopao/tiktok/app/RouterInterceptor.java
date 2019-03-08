@@ -8,6 +8,8 @@ import com.alibaba.android.arouter.facade.callback.InterceptorCallback;
 import com.alibaba.android.arouter.facade.template.IInterceptor;
 import com.alibaba.android.arouter.launcher.ARouter;
 
+import java.util.HashMap;
+
 /**
  * ================================================
  * 声明 {@link ARouter} 拦截器, 可以根据需求自定义拦截逻辑, 比如用户没有登录就拦截其他页面
