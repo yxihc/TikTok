@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.taopao.tiktok">
-
     <!-- 文件读取 -->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <!-- <uses-permission android:name="android.permission.CAMERA" /> -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- <uses-permission android:name="android.permission.CAMERA" /> -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.CAMERA"></uses-permission>
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:name="com.jess.arms.base.BaseApplication"
@@ -23,8 +21,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/BaseAppTheme">
+        <activity android:name=".welcome.WelcomeActivity"></activity>
         <activity
-            android:name=".SplashActivity"
+            android:name=".welcome.SplashActivity"
             android:theme="@style/LauncherTheme"
             android:windowSoftInputMode="adjustPan|stateHidden">
             <intent-filter>
@@ -33,16 +32,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <meta-data
             android:name="com.taopao.tiktok.app.GlobalConfiguration"
             android:value="ConfigModule" />
-        <activity android:name=".tests.ListActivity" />
-        <!-- android:theme="@android:style/Theme.Translucent" -->
+
+        <activity android:name=".tests.ListActivity" /> <!-- android:theme="@android:style/Theme.Translucent" -->
         <activity
             android:name=".test.TransparentActivity"
             android:theme="@style/Transparent" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".HomeActivity"></activity>
+        <activity android:name=".HomeActivity" />
     </application>
 
 </manifest>

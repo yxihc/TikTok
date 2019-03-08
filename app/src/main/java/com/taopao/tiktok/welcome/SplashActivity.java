@@ -1,10 +1,7 @@
-package com.taopao.tiktok;
+package com.taopao.tiktok.welcome;
 
 import android.os.Bundle;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.RotateAnimation;
 import android.view.animation.ScaleAnimation;
@@ -13,10 +10,10 @@ import android.widget.TextView;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.gyf.barlibrary.ImmersionBar;
-import com.jess.arms.utils.ArmsUtils;
 import com.taopao.commonsdk.AppSettingUtils;
 import com.taopao.commonsdk.RouterHub;
 import com.taopao.commonsdk.Utils;
+import com.taopao.tiktok.R;
 
 import java.util.concurrent.TimeUnit;
 
@@ -42,11 +39,13 @@ public class SplashActivity extends AppCompatActivity {
                 .statusBarDarkFont(true)
                 .transparentNavigationBar()//透明导航栏，不写默认黑色(设置此方法，fullScreen()方法自动为true)
                 .init();   //默认状态栏字体颜色为黑色
-        initStartAnim();
-        AppSettingUtils.setFirstStart(false);
+
         if (AppSettingUtils.isFirstStart()) {
             //进入第一次欢迎页
+            Utils.navigation(SplashActivity.this, RouterHub.APP_WELCONEACTIVITY);
+            finish();
         } else {
+            initStartAnim();
             //跳转主页
             Observable.timer(2, TimeUnit.SECONDS)
                     .observeOn(AndroidSchedulers.mainThread())

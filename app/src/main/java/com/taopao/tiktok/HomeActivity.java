@@ -14,6 +14,7 @@ import android.view.WindowManager;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.gyf.barlibrary.ImmersionBar;
+import com.taopao.commonsdk.AppSettingUtils;
 import com.taopao.commonsdk.RouterHub;
 import com.taopao.commonsdk.Utils;
 import com.taopao.commonsdk.permission.PermissionSettingPage;
@@ -40,6 +41,10 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         ButterKnife.bind(this);
+
+
+        AppSettingUtils.setFirstStart(false);
+
 //        StatusBarUtil.setTranslucent(this);//设置状态栏透明
         statusBarConfig().init();
         initView();

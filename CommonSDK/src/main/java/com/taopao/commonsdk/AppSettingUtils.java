@@ -15,7 +15,7 @@ public class AppSettingUtils {
      * @return app是否是第一次启动
      */
     public static boolean isFirstStart() {
-        return SPUtils.getInstance(spName).getBoolean("isFirstStart", false);
+        return SPUtils.getInstance(spName).getBoolean("isFirstStart", true);
     }
 
     /**

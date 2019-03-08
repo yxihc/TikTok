@@ -11,6 +11,7 @@ public interface RouterHub {
      * 宿主 App 分组
      */
     String APP_SPLASHACTIVITY = APP + "/SplashActivity";
+    String APP_WELCONEACTIVITY = APP + "/WelcomeActivity";
     String APP_HOMEACTIVITY = APP + "/HomeActivity";
     String APP_MAINACTIVITY = APP + "/MainActivity";
 
