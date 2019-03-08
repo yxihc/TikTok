@@ -1,10 +1,13 @@
 package com.taopao.modulecamera;
 
 import android.app.Application;
+import android.content.Context;
 import android.view.Gravity;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.blankj.utilcode.util.Utils;
+import com.didichuxing.doraemonkit.DoraemonKit;
+import com.didichuxing.doraemonkit.kit.webdoor.WebDoorManager;
 import com.taopao.rxtoast.RxToast;
 
 /**
@@ -33,7 +36,14 @@ public class TestApp extends Application {
                 .apply();
 
         Utils.init(this);
-
+        DoraemonKit.install(this);
+        // H5任意门功能需要，非必须
+        DoraemonKit.setWebDoorCallback(new WebDoorManager.WebDoorCallback() {
+            @Override
+            public void overrideUrlLoading(Context context, String s) {
+                // 使用自己的H5容器打开这个链接
+            }
+        });
 
     }
 }

@@ -6,6 +6,8 @@ import android.support.annotation.NonNull;
 import android.view.Gravity;
 
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.didichuxing.doraemonkit.DoraemonKit;
+import com.didichuxing.doraemonkit.kit.webdoor.WebDoorManager;
 import com.jess.arms.base.delegate.AppLifecycles;
 import com.jess.arms.utils.ArmsUtils;
 import com.squareup.leakcanary.LeakCanary;
@@ -56,6 +58,17 @@ public class AppLifecyclesImpl implements AppLifecycles {
                 .setZ(30)
                 .setMaxLines(3)
                 .apply();
+
+        DoraemonKit.install(application);
+        // H5任意门功能需要，非必须
+        DoraemonKit.setWebDoorCallback(new WebDoorManager.WebDoorCallback() {
+            @Override
+            public void overrideUrlLoading(Context context, String s) {
+                // 使用自己的H5容器打开这个链接
+            }
+        });
+
+
     }
 
     @Override

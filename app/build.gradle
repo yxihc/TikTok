@@ -75,6 +75,12 @@ dependencies {
     releaseImplementation rootProject.ext.dependencies["canary-release"]
     testImplementation rootProject.ext.dependencies["canary-release"]
 
+
+
+    debugImplementation 'com.didichuxing.doraemonkit:doraemonkit:1.1.2'
+    releaseImplementation 'com.didichuxing.doraemonkit:doraemonkit-no-op:1.1.2'
+
+
     ////////////////////////////////////////////第三方SDK/////////////////////////////////////////////////////
 
 
