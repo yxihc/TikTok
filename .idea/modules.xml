@@ -2,16 +2,18 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/AndroidCamera-master/AndroidCamera-master.iml" filepath="$PROJECT_DIR$/AndroidCamera-master/AndroidCamera-master.iml" />
-      <module fileurl="file://$PROJECT_DIR$/CommonSDK/CommonSDK.iml" filepath="$PROJECT_DIR$/CommonSDK/CommonSDK.iml" />
-      <module fileurl="file://$PROJECT_DIR$/CommonUI/CommonUI.iml" filepath="$PROJECT_DIR$/CommonUI/CommonUI.iml" />
+      <module fileurl="file://$PROJECT_DIR$/base/CommonSDK/CommonSDK.iml" filepath="$PROJECT_DIR$/base/CommonSDK/CommonSDK.iml" />
+      <module fileurl="file://$PROJECT_DIR$/base/CommonUI/CommonUI.iml" filepath="$PROJECT_DIR$/base/CommonUI/CommonUI.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SDK/SDK.iml" filepath="$PROJECT_DIR$/SDK/SDK.iml" />
       <module fileurl="file://$PROJECT_DIR$/TikTok.iml" filepath="$PROJECT_DIR$/TikTok.iml" />
-      <module fileurl="file://$PROJECT_DIR$/TikTokDemo-master/TikTokDemo-master.iml" filepath="$PROJECT_DIR$/TikTokDemo-master/TikTokDemo-master.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Umeng/Umeng.iml" filepath="$PROJECT_DIR$/Umeng/Umeng.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demo/TikTokDemo-master/TikTokDemo-master.iml" filepath="$PROJECT_DIR$/demo/TikTokDemo-master/TikTokDemo-master.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/base/base.iml" filepath="$PROJECT_DIR$/base/base.iml" />
       <module fileurl="file://$PROJECT_DIR$/cameraview/cameraview.iml" filepath="$PROJECT_DIR$/cameraview/cameraview.iml" />
-      <module fileurl="file://$PROJECT_DIR$/module_audio/module_audio.iml" filepath="$PROJECT_DIR$/module_audio/module_audio.iml" />
-      <module fileurl="file://$PROJECT_DIR$/module_camera/module_camera.iml" filepath="$PROJECT_DIR$/module_camera/module_camera.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demo/demo.iml" filepath="$PROJECT_DIR$/demo/demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module/module.iml" filepath="$PROJECT_DIR$/module/module.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module/module_audio/module_audio.iml" filepath="$PROJECT_DIR$/module/module_audio/module_audio.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module/module_camera/module_camera.iml" filepath="$PROJECT_DIR$/module/module_camera/module_camera.iml" />
       <module fileurl="file://$PROJECT_DIR$/videostudy/videostudy.iml" filepath="$PROJECT_DIR$/videostudy/videostudy.iml" />
     </modules>
   </component>

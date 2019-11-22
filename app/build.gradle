@@ -17,6 +17,8 @@ android {
         versionCode rootProject.ext.android["versionCode"]
         versionName rootProject.ext.android["versionName"]
         testInstrumentationRunner rootProject.ext.dependencies["androidJUnitRunner"]
+
+        multiDexEnabled true
         javaCompileOptions {
             annotationProcessorOptions {
                 arguments = [moduleName: project.getName()]
@@ -58,8 +60,8 @@ dependencies {
         runtimeOnly project(":audio")
         runtimeOnly project(":module_camera")
     }
-    implementation project(":CommonSDK")
-    implementation project(":CommonUI")
+    implementation project(":base:CommonSDK")
+    implementation project(":base:CommonUI")
 
     //tools
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
@@ -77,9 +79,11 @@ dependencies {
 
 
 
-    debugImplementation 'com.didichuxing.doraemonkit:doraemonkit:1.1.2'
-    releaseImplementation 'com.didichuxing.doraemonkit:doraemonkit-no-op:1.1.2'
+//    debugImplementation 'com.didichuxing.doraemonkit:doraemonkit:1.1.2'
+//    releaseImplementation 'com.didichuxing.doraemonkit:doraemonkit-no-op:1.1.2'
 
+    debugImplementation 'com.didichuxing.doraemonkit:doraemonkit:2.0.1'
+    releaseImplementation 'com.didichuxing.doraemonkit:doraemonkit-no-op:2.0.1'
 
     ////////////////////////////////////////////第三方SDK/////////////////////////////////////////////////////
 

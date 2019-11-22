@@ -36,8 +36,8 @@ public class CommentBottomSheetDialogFragment extends BottomSheetDialogFragment 
         // 在这里将view的高度设置为精确高度，即可屏蔽向上滑动不占全屏的手势。
         //如果不设置高度的话 会默认向上滑动时dialog覆盖全屏
         View view = inflater.inflate(R.layout.dialog_comment, container, false);
-//        view.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
-//                getScreenHeight(getActivity()) / 2));
+        view.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
+                getScreenHeight(getActivity()) / 2));
         return view;
     }
 
