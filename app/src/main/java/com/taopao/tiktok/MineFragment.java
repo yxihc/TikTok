@@ -1,5 +1,6 @@
 package com.taopao.tiktok;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -11,8 +12,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.taopao.tiktok.map.MapActivity;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import butterknife.Unbinder;
 
 public class MineFragment extends Fragment {
@@ -77,5 +81,11 @@ public class MineFragment extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         unbinder.unbind();
+    }
+
+
+    @OnClick(R.id.map)
+    public void onViewClicked() {
+        startActivity(new Intent(getActivity(), MapActivity.class));
     }
 }

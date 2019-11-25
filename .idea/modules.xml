@@ -11,6 +11,7 @@
       <module fileurl="file://$PROJECT_DIR$/base/base.iml" filepath="$PROJECT_DIR$/base/base.iml" />
       <module fileurl="file://$PROJECT_DIR$/cameraview/cameraview.iml" filepath="$PROJECT_DIR$/cameraview/cameraview.iml" />
       <module fileurl="file://$PROJECT_DIR$/demo/demo.iml" filepath="$PROJECT_DIR$/demo/demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kotlinstudy/kotlinstudy.iml" filepath="$PROJECT_DIR$/kotlinstudy/kotlinstudy.iml" />
       <module fileurl="file://$PROJECT_DIR$/module/module.iml" filepath="$PROJECT_DIR$/module/module.iml" />
       <module fileurl="file://$PROJECT_DIR$/module/module_audio/module_audio.iml" filepath="$PROJECT_DIR$/module/module_audio/module_audio.iml" />
       <module fileurl="file://$PROJECT_DIR$/module/module_camera/module_camera.iml" filepath="$PROJECT_DIR$/module/module_camera/module_camera.iml" />
