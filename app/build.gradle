@@ -115,8 +115,8 @@ dependencies {
     ////////////////////////////////////////////第三方SDK/////////////////////////////////////////////////////
 
 
+    implementation 'com.amap.api:3dmap:latest.integration'
     implementation 'com.amap.api:location:latest.integration'
-    implementation 'com.amap.api:map2d:latest.integration'
 
     implementation 'com.tencent.bugly:crashreport:2.8.6'
     //其中latest.release指代最新Bugly SDK版本号，也可以指定明确的版本号，例如2.2.0

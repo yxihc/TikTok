@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+
 import com.taopao.tiktok.map.MapActivity;
 
 import butterknife.BindView;
