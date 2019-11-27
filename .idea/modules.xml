@@ -2,17 +2,31 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/AndroidStudioProjects-TikTok.iml" filepath="$PROJECT_DIR$/AndroidStudioProjects-TikTok.iml" />
       <module fileurl="file://$PROJECT_DIR$/base/CommonSDK/CommonSDK.iml" filepath="$PROJECT_DIR$/base/CommonSDK/CommonSDK.iml" />
       <module fileurl="file://$PROJECT_DIR$/base/CommonUI/CommonUI.iml" filepath="$PROJECT_DIR$/base/CommonUI/CommonUI.iml" />
       <module fileurl="file://$PROJECT_DIR$/SDK/SDK.iml" filepath="$PROJECT_DIR$/SDK/SDK.iml" />
       <module fileurl="file://$PROJECT_DIR$/TikTok.iml" filepath="$PROJECT_DIR$/TikTok.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SDK/TikTok-SDK.iml" filepath="$PROJECT_DIR$/SDK/TikTok-SDK.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/TikTok-app.iml" filepath="$PROJECT_DIR$/app/TikTok-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/base/TikTok-base.iml" filepath="$PROJECT_DIR$/base/TikTok-base.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cameraview/TikTok-cameraview.iml" filepath="$PROJECT_DIR$/cameraview/TikTok-cameraview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demo/TikTok-demo.iml" filepath="$PROJECT_DIR$/demo/TikTok-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kotlinstudy/TikTok-kotlinstudy.iml" filepath="$PROJECT_DIR$/kotlinstudy/TikTok-kotlinstudy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module/TikTok-module.iml" filepath="$PROJECT_DIR$/module/TikTok-module.iml" />
+      <module fileurl="file://$PROJECT_DIR$/videostudy/TikTok-videostudy.iml" filepath="$PROJECT_DIR$/videostudy/TikTok-videostudy.iml" />
       <module fileurl="file://$PROJECT_DIR$/demo/TikTokDemo-master/TikTokDemo-master.iml" filepath="$PROJECT_DIR$/demo/TikTokDemo-master/TikTokDemo-master.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/base/base.iml" filepath="$PROJECT_DIR$/base/base.iml" />
+      <module fileurl="file://$PROJECT_DIR$/base/CommonSDK/base-CommonSDK.iml" filepath="$PROJECT_DIR$/base/CommonSDK/base-CommonSDK.iml" />
+      <module fileurl="file://$PROJECT_DIR$/base/CommonUI/base-CommonUI.iml" filepath="$PROJECT_DIR$/base/CommonUI/base-CommonUI.iml" />
       <module fileurl="file://$PROJECT_DIR$/cameraview/cameraview.iml" filepath="$PROJECT_DIR$/cameraview/cameraview.iml" />
       <module fileurl="file://$PROJECT_DIR$/demo/demo.iml" filepath="$PROJECT_DIR$/demo/demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demo/TikTokDemo-master/demo-TikTokDemo-master.iml" filepath="$PROJECT_DIR$/demo/TikTokDemo-master/demo-TikTokDemo-master.iml" />
       <module fileurl="file://$PROJECT_DIR$/kotlinstudy/kotlinstudy.iml" filepath="$PROJECT_DIR$/kotlinstudy/kotlinstudy.iml" />
       <module fileurl="file://$PROJECT_DIR$/module/module.iml" filepath="$PROJECT_DIR$/module/module.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module/module_audio/module-module_audio.iml" filepath="$PROJECT_DIR$/module/module_audio/module-module_audio.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module/module_camera/module-module_camera.iml" filepath="$PROJECT_DIR$/module/module_camera/module-module_camera.iml" />
       <module fileurl="file://$PROJECT_DIR$/module/module_audio/module_audio.iml" filepath="$PROJECT_DIR$/module/module_audio/module_audio.iml" />
       <module fileurl="file://$PROJECT_DIR$/module/module_camera/module_camera.iml" filepath="$PROJECT_DIR$/module/module_camera/module_camera.iml" />
       <module fileurl="file://$PROJECT_DIR$/videostudy/videostudy.iml" filepath="$PROJECT_DIR$/videostudy/videostudy.iml" />
