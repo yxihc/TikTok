@@ -11,7 +11,7 @@ public class AppSettingUtils {
 
     private static String spName = "AppSetting";
 
-    
+
     /**
      * @return app是否是第一次启动
      */
