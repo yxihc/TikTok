@@ -1,8 +1,3 @@
-include ':app', ':SDK', ':kotlinstudy',
-        ':videostudy',
-        ':base:CommonSDK',
-        ':base:CommonUI',
-        ':module:module_camera',
-        ':cameraview',
-        ':demo:TikTokDemo-master',
-        ':module:module_audio'
+include ':launcher'
+include ':module_wecome'
+
