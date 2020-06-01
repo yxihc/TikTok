@@ -31,7 +31,7 @@
       <module fileurl="file://$PROJECT_DIR$/module/module_camera/module-module_camera.iml" filepath="$PROJECT_DIR$/module/module_camera/module-module_camera.iml" />
       <module fileurl="file://$PROJECT_DIR$/module/module_audio/module_audio.iml" filepath="$PROJECT_DIR$/module/module_audio/module_audio.iml" />
       <module fileurl="file://$PROJECT_DIR$/module/module_camera/module_camera.iml" filepath="$PROJECT_DIR$/module/module_camera/module_camera.iml" />
-      <module fileurl="file://$PROJECT_DIR$/module_wecome/module_wecome.iml" filepath="$PROJECT_DIR$/module_wecome/module_wecome.iml" group="TikTok/module_wecome" />
+      <module fileurl="file://$PROJECT_DIR$/module_welcome/module_welcome.iml" filepath="$PROJECT_DIR$/module_welcome/module_welcome.iml" group="TikTok/module_welcome" />
       <module fileurl="file://$PROJECT_DIR$/videostudy/videostudy.iml" filepath="$PROJECT_DIR$/videostudy/videostudy.iml" />
     </modules>
   </component>
