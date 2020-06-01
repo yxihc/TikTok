@@ -16,7 +16,7 @@ import com.taopao.module_welcome.databinding.ActivitySplashBinding;
 
 
 public class SplashActivity extends AppCompatActivity {
-    private com.taopao.module_welcome.databinding.ActivitySplashBinding mBinding;
+    private ActivitySplashBinding mBinding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

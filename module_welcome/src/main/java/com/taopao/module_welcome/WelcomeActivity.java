@@ -14,7 +14,7 @@ import com.taopao.module_welcome.animator.AnimatorValueImplements;
 import com.taopao.module_welcome.databinding.ActivityWelcomeBinding;
 
 public class WelcomeActivity extends AppCompatActivity {
-    private com.taopao.module_welcome.databinding.ActivityWelcomeBinding mBinding;
+    private ActivityWelcomeBinding mBinding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
